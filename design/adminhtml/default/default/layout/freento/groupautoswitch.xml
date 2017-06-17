@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_customer_group_new>
+        <reference name="left">
+            <block type="freento_groupautoswitch/adminhtml_customer_group_edit_tabs" name="freento_groupautoswitch.customergroup.tabs" />
+        </reference>
+        <reference name="content">
+            
+        </reference>    
+    </adminhtml_customer_group_new>
+    <freento_groupautoswitch_adminhtml_log_index>
+        <reference name="content">
+            <block type="freento_groupautoswitch/adminhtml_log_grid" name="freento_groupautoswitch.log_grid" />
+        </reference>
+    </freento_groupautoswitch_adminhtml_log_index>
+</layout>

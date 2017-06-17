@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <customer>
+            <children>
+                <freento_groupautoswitch_log>
+                    <title>Group auto swicth log</title>
+                    <action>freento_groupautoswitch/adminhtml_log</action>
+                    <sort_order>200</sort_order>
+                </freento_groupautoswitch_log>
+            </children>
+        </customer>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <customer>
+                        <children>
+                            <freento_groupautoswitch_log>
+                                <title>Group auto swicth log</title>
+                                <action>freento_groupautoswitch/adminhtml_log</action>
+                                <sort_order>200</sort_order>
+                            </freento_groupautoswitch_log>
+                        </children>
+                    </customer>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <freento_groupautoswitch>
+                                        <title>Group auto swicth log</title>
+                                    </freento_groupautoswitch>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

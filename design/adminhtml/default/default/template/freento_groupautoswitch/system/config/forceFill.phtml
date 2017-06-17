@@ -1,0 +1,42 @@
+<script>
+//<![CDATA[
+
+    function forceFill() {
+        var elem = $('<?php echo $this->getHtmlId() ?>');
+        
+        if(confirm('<?php echo $this->__('Are you sure? Customer groups may change significantly, we recommend to do backup before this action') ?>')) {
+            new Ajax.Request('<?php echo $this->getAjaxUrl() ?>', {            
+                onSuccess: function(response) {
+                    
+                    var result = 'none';
+                    try {
+                        result = response.responseText.evalJSON();
+                    } catch (e) {
+                        elem.removeClassName('success').addClassName('fail')
+                    }
+                    
+                    if(result.error) {
+                        $$('#forceFill-results > li')[0].writeAttribute('class', 'error-msg');
+                        $$('#forceFill-results li.message')[0].update(result.message);
+                    } else {
+                        $$('#forceFill-results > li')[0].writeAttribute('class', 'success-msg');
+                        $$('#forceFill-results li.message')[0].update(result.message);
+                    }
+                    $$('#forceFill-results > li')[0].show();
+                }
+            });
+        }
+    }
+    
+//]]>
+</script>
+<ul class="messages" id="forceFill-results">
+    <li style="display: none">
+        <ul>
+            <li class="message"></li>
+        </ul>
+    </li>
+</ul>
+<button onclick="javascript:forceFill(); return false;" class="scalable" type="button" id="<?php echo $this->getHtmlId() ?>">
+    <span><?php echo $this->escapeHtml($this->getButtonLabel()) ?></span>
+</button>

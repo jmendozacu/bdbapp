@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Freento_GroupAutoSwitch>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Freento_GroupAutoSwitch>
+    </modules>
+</config>

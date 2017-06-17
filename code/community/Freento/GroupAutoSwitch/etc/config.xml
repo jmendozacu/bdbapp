@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Freento_GroupAutoSwitch>
+            <version>1.0.1</version>
+        </Freento_GroupAutoSwitch>
+    </modules>
+    <global>
+        <models>
+            <freento_groupautoswitch>
+                <class>Freento_GroupAutoSwitch_Model</class>
+                <resourceModel>freento_groupautoswitch_resource</resourceModel>
+            </freento_groupautoswitch>
+            <freento_groupautoswitch_resource>
+                <class>Freento_GroupAutoSwitch_Model_Resource</class>
+                <entities>
+                    <group>
+                        <table>freento_groupautoswitch_group</table>
+                    </group>
+                    <log>
+                        <table>freento_groupautoswitch_log</table>
+                    </log>
+                </entities>
+            </freento_groupautoswitch_resource>
+        </models>
+        <blocks>
+            <freento_groupautoswitch>
+                <class>Freento_GroupAutoSwitch_Block</class>
+            </freento_groupautoswitch>
+            <adminhtml>
+                <rewrite>
+                    <customer_group_edit_form>Freento_GroupAutoSwitch_Block_Adminhtml_Customer_Group_Edit_Form</customer_group_edit_form>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+        <helpers>
+            <freento_groupautoswitch>
+                <class>Freento_GroupAutoSwitch_Helper</class>
+            </freento_groupautoswitch>
+        </helpers>
+        <resources>
+            <freento_groupautoswitch_setup>
+                <setup>
+                    <module>Freento_GroupAutoSwitch</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </freento_groupautoswitch_setup>
+            <freento_groupautoswitch_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </freento_groupautoswitch_write>
+            <freento_groupautoswitch_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </freento_groupautoswitch_read>
+        </resources>
+        <events>
+            <customer_save_before>
+                <observers>
+                    <freento_groupautoswitch_customer_save_after>
+                        <type>singleton</type>
+                        <class>freento_groupautoswitch/observer</class>
+                        <method>fillLastGroupChangeDate</method>
+                    </freento_groupautoswitch_customer_save_after>
+                </observers>
+            </customer_save_before>
+            <sales_order_save_after>
+                <observers>
+                    <freento_groupautoswitch_check_autoswitch>
+                        <type>singleton</type>
+                        <class>freento_groupautoswitch/observer</class>
+                        <method>checkGroupAutoSwitch</method>
+                    </freento_groupautoswitch_check_autoswitch>
+                </observers>
+            </sales_order_save_after>
+        </events> 
+        <template>
+            <email>
+                <freento_groupautoswitch_group_auto_switch translate="label" module="freento_groupautoswitch">
+                    <label>Group Auto Switch Email Template</label>
+                    <file>freento/groupautoswitch/auto_switch.html</file>
+                    <type>html</type>
+                </freento_groupautoswitch_group_auto_switch>
+                <freento_groupautoswitch_group_downgrade_before translate="label" module="freento_groupautoswitch">
+                    <label>Group Downgrade Before Email Template</label>
+                    <file>freento/groupautoswitch/downgrade_before.html</file>
+                    <type>html</type>
+                </freento_groupautoswitch_group_downgrade_before>
+                <freento_groupautoswitch_group_downgrade translate="label" module="freento_groupautoswitch">
+                    <label>Group Downgrade Email Template</label>
+                    <file>freento/groupautoswitch/downgrade.html</file>
+                    <type>html</type>
+                </freento_groupautoswitch_group_downgrade>
+            </email>
+        </template>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <freento_groupautoswitch>
+                    <file>freento/groupautoswitch.xml</file>
+                </freento_groupautoswitch>
+            </updates>
+        </layout>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <use>admin</use>
+                <args>
+                    <modules>
+                        <freento_groupautoswitch_admin before="Mage_Adminhtml">Freento_GroupAutoSwitch_Adminhtml</freento_groupautoswitch_admin>
+                    </modules>
+                </args>
+            </adminhtml>
+            <freento_groupautoswitch>
+                <use>admin</use>
+                <args>
+                    <module>Freento_GroupAutoSwitch</module>
+                    <frontName>freento_groupautoswitch</frontName>
+                </args>
+            </freento_groupautoswitch>
+        </routers>
+    </admin>
+    <crontab>
+        <jobs>
+            <!--freento_groupautoswitch_downgrade_check>
+                <schedule><cron_expr>15 * * * *</cron_expr></schedule>
+                <run><model>freento_groupautoswitch/cron::downgradeCheck</model></run>
+            </freento_groupautoswitch_downgrade_check-->
+            <!--freento_groupautoswitch_downgrade_before_email>
+                <schedule><cron_expr>25 2 * * *</cron_expr></schedule>
+                <run><model>freento_groupautoswitch/cron::downgradeBeforeEmail</model></run>
+            </freento_groupautoswitch_downgrade_before_email-->
+            <!--freento_groupautoswitch_force_fill>
+                <schedule><cron_expr>5 * * * *</cron_expr></schedule>
+                <run><model>freento_groupautoswitch/cron::forceFill</model></run>
+            </freento_groupautoswitch_force_fill-->
+        </jobs>
+    </crontab>
+    <phpunit>
+        <suite>
+            <modules>
+                 <Freento_GroupAutoSwitch />
+            </modules>
+        </suite>
+    </phpunit>
+</config>
