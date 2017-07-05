@@ -1,7 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <config>
     <modules>
         <Vt_Configviewer>
             <version>0.1.0</version>
         </Vt_Configviewer>
     </modules>
+    <global>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <vt_configviewer_model_observer>
+                        <type>singleton</type>                
+                        <class>Vt_Configviewer_Model_Observer</class>
+                        <method>checkForConfigRequest</method>
+                    </vt_configviewer_model_observer>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+    </global>
  </config>
