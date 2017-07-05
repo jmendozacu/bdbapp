@@ -1,8 +1,8 @@
 <config>
     <modules>
-         <Legend_Configviewer>
+         <Vt_Configviewer>
                 <active>true</active>
                 <codePool>local</codePool>
-         </Legend_Configviewer>
+         </Vt_Configviewer>
      </modules>
 </config>
