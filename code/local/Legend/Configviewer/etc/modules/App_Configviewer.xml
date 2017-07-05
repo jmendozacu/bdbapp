@@ -1,0 +1,8 @@
+<config>
+    <modules>
+         <App_Configviewer>
+                <active>true</active>
+                <codePool>local</codePool>
+         </App_Configviewer>
+     </modules>
+</config>
