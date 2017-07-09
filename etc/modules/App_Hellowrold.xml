@@ -1,0 +1,8 @@
+<config>
+    <modules>
+         <App_Hellowrold>
+                <active>true</active>
+                <codePool>local</codePool>
+         </App_Hellowrold>
+     </modules>
+</config>
