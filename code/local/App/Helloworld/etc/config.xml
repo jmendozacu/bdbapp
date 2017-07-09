@@ -2,7 +2,18 @@
 <config>      
     <modules>  
         <App_Helloworld>  
-            <version>0.2.0</version>  
+            <version>0.1.0</version>  
         </App_Helloworld>  
     </modules>  
+    <frontend>  
+        <routers>  
+            <helloworld>  
+                <use>standard</use>  
+                <args>  
+                    <module>App_Helloworld</module>  
+                    <frontName>helloworld</frontName>  
+                </args>  
+            </helloworld>  
+        </routers>    
+    </frontend>  
 </config> 
