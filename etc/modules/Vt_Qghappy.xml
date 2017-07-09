@@ -1,0 +1,8 @@
+<config>
+    <modules>
+         <Vt_Qghappy>
+                <active>true</active>
+                <codePool>local</codePool>
+         </Vt_Qghappy>
+     </modules>
+</config>
