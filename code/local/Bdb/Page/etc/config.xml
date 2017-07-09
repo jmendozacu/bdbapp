@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>  
 <config>      
     <modules>  
-        <App_Helloworld>  
+        <Bdb_Page>  
             <version>0.1.0</version>  
-        </App_Helloworld>  
+        </Bdb_Page>  
     </modules>  
     <frontend>  
         <routers>  
-            <helloworld>  
+            <bdbpage>  
                 <use>standard</use>  
                 <args>  
-                    <module>App_Helloworld</module>  
-                    <frontName>helloworld</frontName>  
+                    <module>Bdb_Page</module>  
+                    <frontName>bdbpage</frontName>  
                 </args>  
-            </helloworld>  
+            </bdbpage>  
         </routers>    
     </frontend>  
 </config> 

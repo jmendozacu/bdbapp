@@ -1,8 +1,8 @@
 <config>
     <modules>
-         <App_Hellowrold>
+         <Bdb_Page>
                 <active>true</active>
                 <codePool>local</codePool>
-         </App_Hellowrold>
+         </Bdb_Page>
      </modules>
 </config>
