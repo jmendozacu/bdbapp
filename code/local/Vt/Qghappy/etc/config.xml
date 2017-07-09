@@ -4,5 +4,16 @@
         <Vt_Qghappy>  
             <version>0.2.0</version>  
         </Vt_Qghappy>  
-    </modules>  
+    </modules>
+       <frontend>  
+        <routers>  
+            <helloworld>  
+                <use>standard</use>  
+                <args>  
+                    <module>Vt_Qghappy</module>  
+                    <frontName>Qghappy</frontName>  
+                </args>  
+            </helloworld>  
+        </routers>    
+    </frontend>    
 </config>  
