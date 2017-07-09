@@ -17,16 +17,5 @@
                 </observers>
             </controller_front_init_routers>
         </events>
-    </global>
-    <frontend>  
-        <routers>  
-            <helloworld>  
-                <use>standard</use>  
-                <args>  
-                    <module>Vt_Configviewer</module>  
-                    <frontName>helloworld</frontName>  
-                </args>  
-            </helloworld>  
-        </routers>    
-    </frontend> 
+    </global>    
  </config>
