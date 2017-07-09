@@ -7,13 +7,13 @@
     </modules>
        <frontend>  
         <routers>  
-            <helloworld>  
+            <qghappy>  
                 <use>standard</use>  
                 <args>  
                     <module>Vt_Qghappy</module>  
-                    <frontName>Qghappy</frontName>  
+                    <frontName>qghappy</frontName>  
                 </args>  
-            </helloworld>  
+            </qghappy>  
         </routers>    
     </frontend>    
 </config>  
