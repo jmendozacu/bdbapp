@@ -1,11 +1,11 @@
 <?php
 
-class Bdb_Page_IndexController extends Mage_Core_Controller_Front_Action {          
+class Bdb_Page_ProductController extends Mage_Core_Controller_Front_Action {          
     public function indexAction() {  
-        echo 'Hello World!';  
+        echo 'Hello Woasdfrld!';  
     }  
     public function goodbyeAction() {  
-    	echo 'Goodbye World!';  
+    	echo 'Goodbye adsfasdfWorld!';  
 	}
 
 	public function paramsAction() {  
@@ -18,4 +18,3 @@ class Bdb_Page_IndexController extends Mage_Core_Controller_Front_Action {
 	}  
  
 } 
-
