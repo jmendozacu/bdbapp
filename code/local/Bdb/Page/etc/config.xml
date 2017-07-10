@@ -14,6 +14,13 @@
                     <frontName>bdbpage</frontName>  
                 </args>  
             </bdbpage>  
-        </routers>    
+        </routers> 
+        <layout>
+            <updates>
+                <bdbpage module="Bdb_Page">
+                    <file>bdbpage.xml</file>
+                </bdbpage>
+            </updates>
+        </layout>   
     </frontend>  
 </config> 
