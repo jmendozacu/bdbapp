@@ -6,4 +6,7 @@
             <block type="page/html" name="root" output="toHtml" template="bdbpage/simple_page.phtml"/>  
         </reference>  
     </bdbpage_index_index>  
+    <bdbpage_index_index>  
+        <update handle="bdbpage_index_index"> 
+    </bdbpage_index_index>  
 </layout>  
