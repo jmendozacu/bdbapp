@@ -18,7 +18,7 @@
         <layout>
             <updates>
                 <bdbpage module="Bdb_Page">
-                    <file>bdbpage.xml</file>
+                    <file>bdb/bdbpage.xml</file>
                 </bdbpage>
             </updates>
         </layout>   
