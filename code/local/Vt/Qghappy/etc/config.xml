@@ -5,7 +5,7 @@
             <version>0.2.0</version>  
         </Vt_Qghappy>  
     </modules>
-       <frontend>  
+    <frontend>  
         <routers>  
             <qghappy>  
                 <use>standard</use>  
@@ -14,6 +14,13 @@
                     <frontName>qghappy</frontName>  
                 </args>  
             </qghappy>  
-        </routers>    
+        </routers>
+        <layout>
+            <updates>
+                <qghappy module="Vt_Qghappy">
+                    <file>vt/bdbpage.xml</file>
+                </qghappy>
+            </updates>
+        </layout>    
     </frontend>    
 </config>  
