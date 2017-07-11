@@ -18,7 +18,7 @@
         <layout>
             <updates>
                 <qghappy module="Vt_Qghappy">
-                    <file>vt/bdbpage.xml</file>
+                    <file>vt/local.xml</file>
                 </qghappy>
             </updates>
         </layout>    
