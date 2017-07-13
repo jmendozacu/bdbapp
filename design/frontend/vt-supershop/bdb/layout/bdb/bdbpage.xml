@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>  
-<layout version="0.1.0">  
-    <bdbpage_index_index>  
-        <reference name="root">  
-            <block type="page/html" name="root" output="toHtml" template="bdbpage/simple_page.phtml"/>  
-            <!-- <action method="setTemplate"><template>bdbpage/simple_page.phtml</template></action> -->
-        </reference>  
-    </bdbpage_index_index>  
-</layout>  

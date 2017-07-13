@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>  
-<layout version="0.1.0">  
-    <qghappy_index_index>  
-        <reference name="root">  
-            <block type="page/html" name="root" output="toHtml" template="qghappy/simple_page.phtml"/>  
-        </reference>  
-    </qghappy_index_index>  
-</layout>  
