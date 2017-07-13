@@ -22,7 +22,7 @@ class Vt_Flycart_IndexController extends Mage_Core_Controller_Front_Action
 {
 
 	public function topcartAction() {
-		if($this->getRequest()->getParam('isAjax')) {
+		if(true) {
 			$result['cart'] = Mage::getModel('flycart/observer')->getCartTopbar();
 			$this->getResponse()->setBody(Mage::helper('core')->jsonEncode($result));
 		} else {
