@@ -123,7 +123,7 @@ $home = '';
 			<div class="container">
 				<div class="row">
 					<a class="logo" href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>                    
-					<?php //echo $this->getChildHtml('cart_sidebar') ?>				
+					<?php echo $this->getChildHtml('cart_sidebar') ?>				
 					<?php  echo $this->getChildHtml('searchboxpro'); ?>
 					<?php  //echo $this->getChildHtml('topSearch'); ?>
 				</div>
@@ -136,7 +136,7 @@ $home = '';
 				<div class="row">  
 					<div class="box-menu-01 col-lg-3"><?php echo $this->getChildHtml('megaMenu'); ?></div>
 					<div class="box-menu-02 col-lg-9"><?php echo $this->getChildHtml('topMenu'); ?></div>
-					<div class="box-menu-03 col-lg-3"><?php echo $this->getChildHtml('cart_sidebar') ?></div>
+					<div><?php //echo $this->getChildHtml('cart_sidebar') ?></div>
 				</div>
 			</div>  
 		</div>
