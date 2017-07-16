@@ -5,5 +5,10 @@
             <block type="page/html" name="root" output="toHtml" template="bdbpage/simple_page.phtml"/>  
             <!-- <action method="setTemplate"><template>bdbpage/simple_page.phtml</template></action> -->
         </reference>  
+        <reference name="position-08">
+			<block type="cms/block" name="product-tab-03">
+    			<action method="setBlockId"><block_id>product-tab-03</block_id></action>
+			</block>
+		</reference>
     </bdbpage_index_index>  
 </layout>  
