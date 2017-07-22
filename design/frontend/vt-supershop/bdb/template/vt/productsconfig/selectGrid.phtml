@@ -44,7 +44,7 @@ if ($imgWidth <= 0 || $imgHeight <= 0){
 		        $special_to_date = $_product->getSpecialToDate();    
 		        ?>
 		        <div class="productBox">
-		        	<div class="item" style="width=150px;height=200px">
+		        	<div class="item" style="width:150px;height:200px">
 		        	<?php   
 		                if($newsFrom != ''){                            
 		                if (($now>=$newsFrom && $now<=$newsTo)||($now>=$newsFrom && $newsTo =='')){  ?>
@@ -64,7 +64,7 @@ if ($imgWidth <= 0 || $imgHeight <= 0){
 		                        <?php   print_r(floor($saleof)); ?>%</span><span><?php echo $this->__("off");?></span>
 		                    </div>
 		             <?php } ?>  
-					<div class="item-wrap" style="height=200px">
+					<div class="item-wrap" style="height:200px">
                     <div class="item-image">   
                         <a class="product-image no-touch" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>">
                         <img class="first_image" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($imgWidth,$imgHeight); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /> 
