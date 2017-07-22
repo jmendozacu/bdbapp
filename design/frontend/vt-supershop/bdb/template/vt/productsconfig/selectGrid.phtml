@@ -43,7 +43,8 @@ if ($imgWidth <= 0 || $imgHeight <= 0){
 		        $special_from_date = $_product->getSpecialFromDate();
 		        $special_to_date = $_product->getSpecialToDate();    
 		        ?>
-		        <div class="item">
+		        <div class="productBox">
+		        	<div class="item">
 		        	<?php   
 		                if($newsFrom != ''){                            
 		                if (($now>=$newsFrom && $now<=$newsTo)||($now>=$newsFrom && $newsTo =='')){  ?>
@@ -98,52 +99,12 @@ if ($imgWidth <= 0 || $imgHeight <= 0){
                         </div>                                                                        
                     </div>
                     
-                </div><!--end item wrap -->
+                	</div><!--end item wrap -->
+		        </div>
 		        </div>
 		    <?php endforeach; ?>
 		    </div>
 		</div>
-		<div class="navslider">
-			<a class="prev" href="#">Prev</a>
-			<a class="next" href="#">Next</a>
-		</div>
 	</div>
 </div>
-<script type="text/javascript">
-//<![CDATA[
-    jQuery(document).ready(function($) {
-        $('#vt_slider<?php echo $uniqued; ?> div.products-grid').owlCarousel({
-        	items: 4,
-            itemsCustom: [ 
-            	[0, <?php echo $this->screen_phone; ?>], 
-            	[480, <?php echo $this->screen_xs; ?>], 
-            	[768, <?php echo $this->screen_sm; ?>], 
-            	[992, <?php echo $this->screen_md; ?>], 
-            	[1200, <?php echo $this->screen_lg; ?>] 
-            ],
-            pagination: false,
-            slideSpeed : 800,
-            addClassActive: true,
-            scrollPerPage: false,
-            touchDrag: false,
-			afterAction: function (e) {
-			    if(this.$owlItems.length > this.options.items){
-			        $('#vt_slider<?php echo $uniqued; ?> .navslider').show();
-			    }else{
-			        $('#vt_slider<?php echo $uniqued; ?> .navslider').hide();
-			    }
-			}
-            //scrollPerPage: true,
-        });
-		$('#vt_slider<?php echo $uniqued; ?> .navslider .prev').on('click', function(e){
-			e.preventDefault();
-			$('#vt_slider<?php echo $uniqued; ?> div.products-grid').trigger('owl.prev');
-		});
-		$('#vt_slider<?php echo $uniqued; ?> .navslider .next').on('click', function(e){
-			e.preventDefault();
-			$('#vt_slider<?php echo $uniqued; ?> div.products-grid').trigger('owl.next');
-		});
-    });
-//]]>
-</script>
 <?php endif; ?>
