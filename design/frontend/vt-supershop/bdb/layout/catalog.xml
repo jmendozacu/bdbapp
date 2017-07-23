@@ -66,7 +66,7 @@ Category default layout
     <catalog_category_default translate="label">
         <label>Catalog Category (Non-Anchor)</label>
         <reference name="left">            
-            <block type="catalog/layer_view" name="catalog.leftnav" after="currency" template="catalog/layer/view.phtml"/>
+            <!-- <block type="catalog/layer_view" name="catalog.leftnav" after="currency" template="catalog/layer/view.phtml"/> -->
             <block type="cms/block" name="box-banner">
                 <action method="setBlockId"><block_id>box-banner</block_id></action>
             </block>
