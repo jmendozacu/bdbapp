@@ -62,8 +62,10 @@ if ($imgWidth == 229) {
 		        $special_from_date = $_product->getSpecialFromDate();
 		        $special_to_date = $_product->getSpecialToDate();   
 		        ?>
-		        <div class="item">
-		        	<?php
+
+		        <div style="float: left;">
+		        <div class="item" style="float:none">
+		        	<?php   
 		                if($newsFrom != ''){                            
 		                if (($now>=$newsFrom && $now<=$newsTo)||($now>=$newsFrom && $newsTo =='')){  ?>
 		                    <div class='new-item'><?php echo $this->__("new"); ?></div>
@@ -118,9 +120,9 @@ if ($imgWidth == 229) {
                     </div>
                     
                 	</div><!--end item wrap -->
-		        </div>
+		        </div><!--end item --></div>
 		    <?php endforeach; ?>
-		    </div>
+		    </div><!--end products-grid -->
 		</div>
 	</div>
 </div>
