@@ -60,7 +60,8 @@ if ($imgWidth == 229) {
 		        $newsTo=  $_product->getNewsToDate();
 		        $specialprice = Mage::getModel('catalog/product')->load($_product->getId())->getSpecialPrice(); 
 		        $special_from_date = $_product->getSpecialFromDate();
-		        $special_to_date = $_product->getSpecialToDate();    
+		        $special_to_date = $_product->getSpecialToDate();
+		        echo $specialprice;    
 		        ?>
 		        <div class="item">
 		        	<?php   
