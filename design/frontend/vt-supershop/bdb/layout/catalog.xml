@@ -102,7 +102,7 @@ Category default layout
 Category layered navigation layout
 -->
 
-    <catalog_category_layered translate="label">
+<catalog_category_layered translate="label">
         <label>Catalog Category (Anchor)</label>
         <reference name="left">
             <!-- <block type="catalog/layer_view" name="catalog.leftnav" after="currency" template="catalog/layer/view.phtml"/> -->
