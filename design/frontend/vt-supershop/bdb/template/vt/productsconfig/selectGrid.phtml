@@ -14,19 +14,6 @@ $uniqued = rand().time();
 $imgWidth = $this->product_image_width;
 $imgHeight = $this->product_image_height;
 
-$isDiscount = $this->is_discount;
-
-if ($isDiscount == "yes") {
-	$specialpriceArray = array();
-	foreach ($_productCollection as $_product) {
-		$specialprice = Mage::getModel('catalog/product')->load($_product->getId())->getSpecialPrice();
-		if ($specialprice) {
-			array_push($specialpriceArray, $_product);
-		}
-	}.
-	$_productCollection = $specialpriceArray;
-}
-
 if ($imgWidth <= 0 || $imgHeight <= 0){
 	$this->product_image_disp = false;
 }
