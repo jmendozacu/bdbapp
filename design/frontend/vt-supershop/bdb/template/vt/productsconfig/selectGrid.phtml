@@ -18,7 +18,9 @@ if ($imgWidth == 229) {
 	$dicount;
 	foreach ($_productCollection as $key => $_product) {
 		$specialprice = Mage::getModel('catalog/product')->load($_product->getId())->getSpecialPrice();
-		echo $specialprice;
+		if ($specialprice > 0) {
+			unset($_productCollection[$key]);
+		}
 	}
 }
 
