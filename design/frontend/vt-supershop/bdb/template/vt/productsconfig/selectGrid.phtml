@@ -14,9 +14,13 @@ $uniqued = rand().time();
 $imgWidth = $this->product_image_width;
 $imgHeight = $this->product_image_height;
 
-$dicountArray = array();
 if ($imgWidth == 229) {
-	$_productCollection = $dicountArray;
+
+	foreach ($_productCollection as $key => $_product) {
+		echo $key;
+	}
+
+ 
 }
 
 if ($imgWidth <= 0 || $imgHeight <= 0){
