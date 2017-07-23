@@ -64,7 +64,8 @@ if ($imgWidth == 229) {
 		        ?>
 		        <div class="itemBox">
 		        <div class="item">
-		        	<?php  
+		        	<?php
+		        		echo $specialprice;   
 		                if($newsFrom != ''){                            
 		                if (($now>=$newsFrom && $now<=$newsTo)||($now>=$newsFrom && $newsTo =='')){  ?>
 		                    <div class='new-item'><?php echo $this->__("new"); ?></div>
@@ -75,15 +76,15 @@ if ($imgWidth == 229) {
 		                    <div class='new-item'><?php echo $this->__("new"); ?></div>
 		                <?php }
 		                }?>
-		             <?php } ?>  
-					<div class="item-wrap">
-						<?php 
+		                <?php 
 		                if (($specialprice && ($special_from_date <= $now) && ($special_to_date >= $now || $special_to_date =="" ))){?>
 		                    <div class='sale-item'>
 		                        <span class='first'><?php
 		                        $saleof= abs(($specialprice/($_product->getPrice()))*100-100);?>
 		                        <?php   print_r(floor($saleof)); ?>%</span><span><?php echo $this->__("off");?></span>
 		                    </div>
+		             <?php } ?>  
+					<div class="item-wrap">
                     <div class="item-image">   
                         <a class="product-image no-touch" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>">
                         <img class="first_image" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($imgWidth,$imgHeight); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /> 
