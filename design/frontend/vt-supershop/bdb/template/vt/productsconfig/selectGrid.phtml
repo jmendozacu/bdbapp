@@ -19,7 +19,6 @@ $leftArray = array();
 	foreach ($_productCollection as $key => $_product) {
 		$specialprice = Mage::getModel('catalog/product')->load($_product->getId())->getSpecialPrice();
 		if ($imgWidth == 229) {
-			echo "111";
 			if ($specialprice > 0) {
 				array_push($leftArray, $_product);
 			}
