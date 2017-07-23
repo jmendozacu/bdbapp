@@ -15,12 +15,14 @@ $imgWidth = $this->product_image_width;
 $imgHeight = $this->product_image_height;
 
 if ($imgWidth == 229) {
-
+	$dicount;
 	foreach ($_productCollection as $key => $_product) {
-		echo $key;
+		$specialprice = Mage::getModel('catalog/product')->load($_product->getId())->getSpecialPrice();
+		if ($specialprice > 0) {
+			$dicount = $key;
+		}
 	}
-
- 
+	unset($_productCollection[$dicount]);
 }
 
 if ($imgWidth <= 0 || $imgHeight <= 0){
