@@ -60,11 +60,11 @@ if ($imgWidth == 229) {
 		        $newsTo=  $_product->getNewsToDate();
 		        $specialprice = Mage::getModel('catalog/product')->load($_product->getId())->getSpecialPrice(); 
 		        $special_from_date = $_product->getSpecialFromDate();
-		        $special_to_date = $_product->getSpecialToDate();
-		        echo $specialprice;    
+		        $special_to_date = $_product->getSpecialToDate();   
 		        ?>
 		        <div class="item">
-		        	<?php   
+		        	<?php
+		        		echo $specialprice;   
 		                if($newsFrom != ''){                            
 		                if (($now>=$newsFrom && $now<=$newsTo)||($now>=$newsFrom && $newsTo =='')){  ?>
 		                    <div class='new-item'><?php echo $this->__("new"); ?></div>
