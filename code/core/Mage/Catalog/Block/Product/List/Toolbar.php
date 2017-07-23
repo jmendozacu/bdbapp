@@ -95,7 +95,7 @@ class Mage_Catalog_Block_Product_List_Toolbar extends Mage_Core_Block_Template
      *
      * @var bool
      */
-    protected $_enableViewSwitcher  = true;
+    protected $_enableViewSwitcher  = false;
 
     /**
      * Is Expanded
@@ -605,7 +605,7 @@ class Mage_Catalog_Block_Product_List_Toolbar extends Mage_Core_Block_Template
      */
     public function isEnabledViewSwitcher()
     {
-        return false;
+        return $this->_enableViewSwitcher;
     }
 
     /**
