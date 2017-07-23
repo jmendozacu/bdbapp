@@ -16,12 +16,7 @@ $imgHeight = $this->product_image_height;
 
 if ($imgWidth == 229) {
 	$specialpriceArray = array();
-	foreach ($_productCollection as $_product) {
-		$specialprice = Mage::getModel('catalog/product')->load($_product->getId())->getSpecialPrice();
-		if ($specialprice > 0) {
-			array_push($specialpriceArray, $_product);
-		}
-	}
+
 	$_productCollection = $specialpriceArray;
 }
 
