@@ -37,6 +37,8 @@ if ($imgWidth == 229) {
 	$finalCollection = $_productCollection;
 }
 
+$outputCount = 0;
+
 ?>
 <?php if(!count($finalCollection)): ?>
 	<p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
@@ -54,7 +56,12 @@ if ($imgWidth == 229) {
 	    <div class="container-slider">
 		    <div class="products-grid">
 		    <?php foreach($finalCollection as $_product) : ?>
+
 		        <?php
+		        if ($outputCount > 7) {
+		        	break;
+		        }
+		        $outputCount = $outputCount + 1;
 		        $now = date("Y-m-d H:m:s");
 		        $newsFrom= $_product->getNewsFromDate();
 		        $newsTo=  $_product->getNewsToDate();
