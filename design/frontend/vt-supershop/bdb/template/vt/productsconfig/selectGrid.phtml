@@ -117,7 +117,7 @@ $outputCount = 0;
                        
                     <div class="pro-info">
                         <div class="pro-inner">
-                           <div class="pro-title product-name"><a href="<?php echo $_product->getProductUrl() ?>"><?php echo $this->escapeHtml($_product->getName()) ?></a></div>    
+                           <div class="pro-title product-name"><a href="<?php echo $_product->getProductUrl() ?>"><?php echo $this->escapeHtml($_product->getName().$_product->getShortDescription()) ?></a></div>
                            <div class="pro-content">    
                                 <div class="wrap-price"> 
                                 <?php echo $this->getPriceHtml($_product, true) ?> 
