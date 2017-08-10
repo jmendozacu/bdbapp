@@ -148,6 +148,15 @@
                 </args>
             </megamenu>
         </routers>
+        <translate>
+            <modules>
+                <Mage_Page>
+                    <files>
+                        <default>Mage_Page.csv</default>
+                    </files>
+                </Mage_Page>
+            </modules>
+        </translate>
         <layout>
             <updates>
                 <megamenu>
