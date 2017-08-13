@@ -108,7 +108,7 @@ $outputCount = 0;
                         	</div>                            
                         </div>  
                         <?php if($_product->isSaleable()): ?>
-                            <a title="<?php echo $this->__('Add to cart') ?>" class="btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><?php echo $this->__('Add to Cart') ?></a>
+                            <a title="<?php echo $this->__('Add to cart') ?>" class="btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product).== ?>')"><?php echo $this->__('Add to Cart') ?></a>
                         <?php else: ?>
                             <a href="#" class="availability out-of-stock"><?php echo $this->__('Out of stock') ?></a>
                         <?php endif; ?>
