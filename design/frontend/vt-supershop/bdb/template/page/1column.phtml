@@ -114,26 +114,6 @@ global $var_vttheme;
                 <?php if ($this->getChildHtml('position-09') || $this->getChildHtml('position-08') || $this->getChildHtml('productsconfig')&& ($cms =='home-01'||$cms =='home-04')){ ?>
                 <div class="category-products">
 
-                    <?php if ($this->getChildHtml('position-08') && $l==1) : ?>
-                    <div class="position-08">   
-                        <div class="container">
-                            <div class="row">                                  
-                                <?php echo $this->getChildHtml('position-08'); ?>                            
-                            </div>                    
-                        </div>                                         
-                    </div>    
-                    <?php endif; ?>
-
-                     <?php if ($this->getChildHtml('position-17') && $cms =='home-03' ) : ?>
-                    <div class="position-17">   
-                        <div class="container">
-                            <div class="row">                                  
-                                <?php echo $this->getChildHtml('position-17'); ?>                            
-                            </div>                    
-                        </div>                                         
-                    </div>    
-                    <?php endif; ?>
-
                     <?php if ($this->getChildHtml('position-09')) : ?>
                     <div class="position-09">   
                         <div class="container">
@@ -141,18 +121,6 @@ global $var_vttheme;
                                 <?php echo $this->getChildHtml('position-09'); ?>                            
                             </div>                    
                         </div>                                         
-                    </div>    
-                    <?php endif; ?>
-                    
-                    <?php if ($this->getChildHtml('position-06')&&$l==3) : ?>
-                    <div class="position-06">       
-                        <div class="container">
-                            <div class="row">
-                                <div class="row">             
-                                <?php echo $this->getChildHtml('position-06'); ?> 
-                                </div>
-                            </div>
-                        </div>                                          
                     </div>    
                     <?php endif; ?>
 
@@ -165,17 +133,16 @@ global $var_vttheme;
                             </div>                               
                         </div> 
                     <?php endif; ?>
-                    <?php if ($this->getChildHtml('position-11')&& $l==1) : ?>
+
+                    <?php if ($this->getChildHtml('position-11')) : ?>
                         <div class="position-11">
                             <div class="container">
-                                <div class="row">
-                                    <div class="row">    
-                                    <?php echo $this->getChildHtml('position-11'); ?>
-                                    </div>
+                                <div class="row">    
+                                    <?php echo $this->getChildHtml('position-11'); ?>  
                                 </div>                    
                             </div>                               
                         </div> 
-                    <?php endif; ?>
+                    <?php endif; ?>                    
 
                     <?php if ($this->getChildHtml('position-12')) : ?>
                         <div class="position-12">
@@ -186,7 +153,8 @@ global $var_vttheme;
                             </div>                               
                         </div> 
                     <?php endif; ?>
-                    <?php if ($this->getChildHtml('position-13') && $l==1) : ?>
+
+                    <?php if ($this->getChildHtml('position-13')) : ?>
                         <div class="position-13">
                             <div class="container">
                                 <div class="row">    
@@ -195,49 +163,7 @@ global $var_vttheme;
                             </div>                               
                         </div> 
                     <?php endif; ?>
-                    <?php if ($this->getChildHtml('position-16')) : ?>
-                    <div class="position-16">       
-                        <div class="container">
-                            <div class="row">
-                                <div class="row">             
-                                <?php echo $this->getChildHtml('position-16'); ?> 
-                                </div>
-                            </div>
-                        </div>                                          
-                    </div>    
-                    <?php endif; ?>
-                    <?php if ($this->getChildHtml('position-05')) : ?>
-                    <div class="position-05">       
-                        <div class="container">
-                            <div class="row">
-                                <div class="row">             
-                                <?php echo $this->getChildHtml('position-05'); ?> 
-                                </div>
-                            </div>
-                        </div>                                          
-                    </div>    
-                    <?php endif; ?>
-                    
-                    <?php if ($this->getChildHtml('position-13') && $l==3) : ?>
-                        <div class="position-13">
-                            <div class="container">
-                                <div class="row">    
-                                    <?php echo $this->getChildHtml('position-13'); ?>  
-                                </div>                    
-                            </div>                               
-                        </div> 
-                    <?php endif; ?>
-                    
-                     <?php if ($this->getChildHtml('position-08') && $l==3) : ?>
-                    <div class="position-08">   
-                        <div class="container">
-                            <div class="row">                                  
-                                <?php echo $this->getChildHtml('position-08'); ?>                            
-                            </div>                    
-                        </div>                                         
-                    </div>    
-                    <?php endif; ?>
-                    
+
                     <?php if ($this->getChildHtml('position-14')) : ?>
                         <div class="position-14">
                             <div class="container">
