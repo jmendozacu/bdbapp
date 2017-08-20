@@ -223,7 +223,7 @@
                   
                         <div class="pro-info">    
                             <div class="pro-inner">                              
-                                <div class="pro-title product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></div>
+                                <div class="pro-title product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name').$_helper->productAttribute($_product, $_product->getShortDescription(), 'shortDescription') ?></a></div>
                                 <div class="pro-content">
                                     <div class="wrap-price"> 
                                         <?php echo $this->getPriceHtml($_product, true) ?>
