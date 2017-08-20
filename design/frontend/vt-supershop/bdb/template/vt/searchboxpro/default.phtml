@@ -26,7 +26,7 @@ $uniqued = rand().time();?>
 						<div class="wrap-scrollbar">
 							<div  class="scrollbar">
 								<ul>
-									<li class="level-0"><?php echo $this->__("All Categories");?>
+									<li class="level-0" style="display:none"><?php echo $this->__("All Categories");?>
 										<input type="hidden" name="id<?php echo $uniqued; ?>" value="">
 									</li>
 									<?php foreach ( $cat_list as $cat):?>		
@@ -43,7 +43,7 @@ $uniqued = rand().time();?>
 						 </div>
 					 </div>
 					<input class="cat-value" type="hidden" name="<?php echo $categorySearchHelper->getCategoryParamName() ?>" value="">
-					<input size="30" id="search" type="text" name="<?php echo $this->helper('catalogSearch')->getQueryParamName() ?>" class="input-text" onfocus="if(this.value=='I am shopping for...') this.value='';" onblur="if(this.value=='') this.value='I am shopping for...';" value="I am shopping for..."  />
+					<input size="30" id="search" type="text" name="<?php echo $this->helper('catalogSearch')->getQueryParamName() ?>" class="input-text" onfocus="if(this.value=='I am shopping for...') this.value='';" onblur="if(this.value=='') this.value='I am shopping for...';" value=""  />
 					<button type="submit" title="<?php echo $this->__('Search') ?>" class="button form-button"><span><span><?php echo $this->__('Search') ?></span></span></button>
 					<div id="search_autocomplete" class="search-autocomplete"></div>
 			
