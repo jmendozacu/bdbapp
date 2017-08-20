@@ -50,7 +50,7 @@
 "Order item id cannot be null","订购物品 id 不能为空"
 "Ordered","已下单"
 "Out of stock","缺货"
-"Pending","挂起"
+"Pending","处理中"
 "Please log in to download your product or purchase <a href=""%s"">%s</a>.","请登录以下载您的产品或购买 <a href=""%s"">%s</a>。"
 "Please log in to download your product.","请登录以下载您的产品"
 "Please set resource file and link type.","请设置资源类型与链接类型。"

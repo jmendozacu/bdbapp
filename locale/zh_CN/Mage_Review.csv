@@ -54,7 +54,7 @@
 "Nickname can\'t be empty","昵称不能为空"
 "Not Approved","未批准"
 "Only registered users can write reviews. Please, <a href=""%s"">log in</a> or <a href=""%s"">register</a>","仅注册用户可撰写评论。请<a href=""%s"">登录</a>或<a href=""%s"">注册</a>"
-"Pending","挂起"
+"Pending","处理中"
 "Pending Reviews","挂起的评测"
 "Pending Reviews of Customer `%s`","来自客户“%s”未决的评论"
 "Please select a product","请选择产品"
