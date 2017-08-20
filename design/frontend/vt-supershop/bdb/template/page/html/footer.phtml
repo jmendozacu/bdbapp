@@ -42,9 +42,7 @@ $home = '';
 	        		<div class="container">
 						<div class="row">
 					        <div class="row">    
-								<div class="box-link-01 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-	        					<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('box-link-01')->toHtml();?>
-					        	</div>	
+								
 							</div>
 						</div>
 					</div>
@@ -54,45 +52,14 @@ $home = '';
 				<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('table-footer')->toHtml();?>
 				</div>
 				<div style="clear:both;"></div>
-				<?php } ?>
-		        <div class="block block-ma col-lg-3 col-md-3 col-sm-3 col-xs-12">       	
-		        	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('block-my-account')->toHtml();?>
-		        </div>
-		        <div class="block block-od col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	        	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('block-help')->toHtml();?>
-	        	</div>
-	        	<div class="block block-in col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	        	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('block-further-information')->toHtml();?>
-	        	</div>
-	        	<div class="block block-cu col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	        	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('block-contact-us-footer')->toHtml();?>
-	        	</div>
-				
-	        	<?php if($home != 'home-02'){
-				echo $this->getLayout()->createBlock('cms/block')->setBlockId('box-newlletter')->toHtml();
-				}?>
+				<?php }?>
 	        </div>	
 			<?php if ( $var_vttheme->getParam('showontop') == 1 ){?>
 				<a id="gototop" href="#" title="Go to Top"><?php echo $this->__('Top'); ?></a>
 			<?php	} ?>
 		</div>
 	</div>
-</div>	
-<?php if($home != 'home-02'){ ?>
-<div class="inner-bottom">		
-	<div class="container">
-		<div class="row">
-	        <div class="row">    
-				<div class="block col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('box-link-02')->toHtml();?>
-					
-				</div>	
-				
-			</div>
-		</div>
-	</div>
 </div>
-<?php } ?>
 <div class="box-add">
 	<div class="container">
 		<div class="row">
