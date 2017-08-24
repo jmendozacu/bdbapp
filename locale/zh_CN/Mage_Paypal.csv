@@ -508,7 +508,7 @@
 "Skip Order Review Step","跳过订单复查步骤"
 "Solo","Solo"
 "Some PayPal solutions conflict.","部分 PayPal 解决方案出现冲突。"
-"Sorry, no quotes are available for this order at this time.","抱歉，当前该订单中没有报价可用。"
+"Sorry, no quotes are available for this order at this time.","抱歉，该地址暂时不支持送货。"
 "Sort Order","排序顺序"
 "Specifies what the Authorization Honor Period is on the merchant’s PayPal account. It must mirror the setting in PayPal.","指定商家PayPal帐户的授权周期时长，这里的设置必须与PayPal中的设置一致。"
 "Specifies what the Order Valid Period is on the merchant’s PayPal account. It must mirror the setting in PayPal.","指定商家PayPal帐户的订单验证周期。这里的设置必须与PayPal中的设置一致。"

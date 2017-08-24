@@ -704,7 +704,7 @@
 "Some item options or their combination are not currently available.","部分商品选项或选项组合当前不可用。"
 "Some of the products below do not have all the required options.","下方部分产品未包含所有必需的选项。"
 "Some of the selected options are not currently available.","部分已选择的选项当前不可用。"
-"Sorry, no quotes are available for this order at this time.","抱歉，当前该订单中没有报价可用。"
+"Sorry, no quotes are available for this order at this time.","抱歉，该地址暂时不支持送货。"
 "Source object is not specified.","源对象未指定。"
 "Specified profile does not exist.","指定的配置文件不存在。"
 "State Code [State Title]","州代码[州名称]"

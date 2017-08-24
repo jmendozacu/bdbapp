@@ -304,7 +304,7 @@
 "Some of the requested products are unavailable.","部分已请求的产品暂无供应。"
 "Some products quantities were recalculated because of quantity increment mismatch","由于数量增量不匹配，部分产品数量已被重新计算"
 "Sorry, guest checkout is not enabled. Please try again or contact store owner.","很抱歉，来宾结账尚未启用。请重试或联系商店店主。"
-"Sorry, no quotes are available for this order at this time.","抱歉，当前该订单中没有报价可用。"
+"Sorry, no quotes are available for this order at this time.","抱歉，该地址暂时不支持送货"
 "State/Province","州/省"
 "Status","状态"
 "Store View","店铺视图"
