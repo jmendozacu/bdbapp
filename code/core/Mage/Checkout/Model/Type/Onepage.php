@@ -278,6 +278,26 @@ class Mage_Checkout_Model_Type_Onepage
             $address->setSaveInAddressBook(empty($data['save_in_address_book']) ? 0 : 1);
         }
 
+            //zipcode check
+            $collection = Mage::getModel('shippingrestriction/shippingzip')->getCollection();
+
+            $zipcode = array();
+            foreach ($collection as $value)
+            {
+                $zipcode[] = $value->zipcode;
+            }
+            // $address = Mage::getSingleton('checkout/session')->getQuote()
+            // ->getShippingAddress();   
+
+            if (!in_array($address->getData('postcode'),$zipcode))
+            {
+                    return array('error' => 1,
+                        'message' => Mage::helper('checkout')->__('Shipping is not available for your location.')
+                    );
+            }
+
+            //zipcode  check
+
         // set email for newly created user
         if (!$address->getEmail() && $this->getQuote()->getCustomerEmail()) {
             $address->setEmail($this->getQuote()->getCustomerEmail());
@@ -556,6 +576,26 @@ class Mage_Checkout_Model_Type_Onepage
             $address->setSaveInAddressBook(empty($data['save_in_address_book']) ? 0 : 1);
             $address->setSameAsBilling(empty($data['same_as_billing']) ? 0 : 1);
         }
+
+            //zipcode check
+            $collection = Mage::getModel('shippingrestriction/shippingzip')->getCollection();
+
+            $zipcode = array();
+            foreach ($collection as $value)
+            {
+                $zipcode[] = $value->zipcode;
+            }
+            // $address = Mage::getSingleton('checkout/session')->getQuote()
+            // ->getShippingAddress();   
+
+            if (!in_array($address->getData('postcode'),$zipcode))
+            {
+                    return array('error' => 1,
+                        'message' => Mage::helper('checkout')->__('Shipping is not available for your location.')
+                    );
+            }
+
+            //zipcode  check
 
         $address->implodeStreetAddress();
         $address->setCollectShippingRates(true);

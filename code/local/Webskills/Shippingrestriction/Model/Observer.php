@@ -14,15 +14,15 @@ class Webskills_Shippingrestriction_Model_Observer
 				$address = Mage::getSingleton('checkout/session')->getQuote()
                                       ->getShippingAddress();	
 
-				if (in_array($address->getData('postcode'),$data))
-				{
-					throw new Mage_Core_Exception(
-					Mage::helper('catalog')->__('Shipping is not available for your location.')
-					);die;
-				}
-				else
-				{
-				}
+				// if (in_array($address->getData('postcode'),$data))
+				// {
+				// 	throw new Mage_Core_Exception(
+				// 	Mage::helper('catalog')->__('Shipping is not available for your location.')
+				// 	);die;
+				// }
+				// else
+				// {
+				// }
 
 			}
 		
