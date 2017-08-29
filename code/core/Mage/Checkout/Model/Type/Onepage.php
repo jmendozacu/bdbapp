@@ -314,7 +314,7 @@ class Mage_Checkout_Model_Type_Onepage
             // $address = Mage::getSingleton('checkout/session')->getQuote()
             // ->getShippingAddress();   
 
-            if (!_checkZipcode($address->getData('postcode'),$zipcode)) {
+            if (!$this->_checkZipcode($address->getData('postcode'),$zipcode)) {
                     return array('error' => 1,
                         'message' => Mage::helper('checkout')->__('Sorry, no quotes are available for this order at this time.')
                     );
@@ -612,7 +612,7 @@ class Mage_Checkout_Model_Type_Onepage
             // $address = Mage::getSingleton('checkout/session')->getQuote()
             // ->getShippingAddress();   
             
-            if (!_checkZipcode($address->getData('postcode'),$zipcode)) {
+            if (!$this->_checkZipcode($address->getData('postcode'),$zipcode)) {
                     return array('error' => 1,
                         'message' => Mage::helper('checkout')->__('Sorry, no quotes are available for this order at this time.')
                     );
