@@ -231,14 +231,16 @@ class Mage_Checkout_Model_Type_Onepage
             if (strstr($value,"*"))
             {
                 $newvalue = str_replace("*", "", $value);
-                if(strpos($zipcode,$newvalue) === 0)
+                $zipcode_space = str_replace(" ", "", $zipcode);
+                if(strpos($zipcode_space,$newvalue) === 0)
                 {
                     return true;
                 }
             }
             else
             {
-                if ($zipcode == $value) {
+                $zipcode_space = str_replace(" ", "", $zipcode);
+                if ($zipcode_space == $value) {
                     return true;
                 }
             }
