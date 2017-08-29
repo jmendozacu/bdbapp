@@ -222,6 +222,31 @@ class Mage_Checkout_Model_Type_Onepage
     }
 
     /**
+    * 检查zipcode是否正确，支持*号通配符
+    */
+    public function _checkZipcode($zipcode,$zipcodes)
+    {
+        foreach ($zipcodes as $value)
+        {
+            if (strstr($value,"*"))
+            {
+                $newvalue = str_replace("*", "", $value);
+                if(strpos($zipcode,$newvalue) === 0)
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                if ($zipcode == $value) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
      * Save billing address information to quote
      * This method is called by One Page Checkout JS (AJAX) while saving the billing information.
      *
@@ -289,10 +314,9 @@ class Mage_Checkout_Model_Type_Onepage
             // $address = Mage::getSingleton('checkout/session')->getQuote()
             // ->getShippingAddress();   
 
-            if (!in_array($address->getData('postcode'),$zipcode))
-            {
+            if (!_checkZipcode($address->getData('postcode'),$zipcode)) {
                     return array('error' => 1,
-                        'message' => Mage::helper('checkout')->__('Shipping is not available for your location.')
+                        'message' => Mage::helper('checkout')->__('Sorry, no quotes are available for this order at this time.')
                     );
             }
 
@@ -587,11 +611,10 @@ class Mage_Checkout_Model_Type_Onepage
             }
             // $address = Mage::getSingleton('checkout/session')->getQuote()
             // ->getShippingAddress();   
-
-            if (!in_array($address->getData('postcode'),$zipcode))
-            {
+            
+            if (!_checkZipcode($address->getData('postcode'),$zipcode)) {
                     return array('error' => 1,
-                        'message' => Mage::helper('checkout')->__('Shipping is not available for your location.')
+                        'message' => Mage::helper('checkout')->__('Sorry, no quotes are available for this order at this time.')
                     );
             }
 
