@@ -232,7 +232,8 @@ class Mage_Checkout_Model_Type_Onepage
             {
                 $newvalue = str_replace("*", "", $value);
                 $zipcode_space = str_replace(" ", "", $zipcode);
-                if(strpos($zipcode_space,$newvalue) === 0)
+                $zipcode_up = strtoupper($zipcode_space);
+                if(strpos($zipcode_up,$newvalue) === 0)
                 {
                     return true;
                 }
@@ -240,7 +241,8 @@ class Mage_Checkout_Model_Type_Onepage
             else
             {
                 $zipcode_space = str_replace(" ", "", $zipcode);
-                if ($zipcode_space == $value) {
+                $zipcode_up = strtoupper($zipcode_space);
+                if ($zipcode_up == $value) {
                     return true;
                 }
             }
