@@ -6,6 +6,7 @@
 			<action method="addItem"><type>skin_css</type><name>vt/slideshow/css/settings-ie8.css</name><params/><if>lte IE 8</if></action>
 			<action method="addCss"><stylesheet>vt/slideshow/css/revolution-customs.css</stylesheet></action>		
 			<action method="addJs"><script>vt/jquery/jquery.js</script></action>
+			<action method="addJs"><script>vt/jquery/jquery_slide.js</script></action>
             <action method="addJs"><script>vt/jquery/jquery-noconflict.js</script></action>
 			<action method="addItem"><type>skin_js</type><name helper="slideshow/data/getJSThemepunchPlugins"/><params/><if/></action>
 			<action method="addItem"><type>skin_js</type><name helper="slideshow/data/getJSSlideShow"/><params/><if/></action>
