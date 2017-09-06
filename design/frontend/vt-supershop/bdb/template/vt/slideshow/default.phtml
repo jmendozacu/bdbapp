@@ -49,8 +49,9 @@ $l = $var_vttheme->getParam('layout_home');
 	</div>
 
 	<script type="text/javascript">
-	window.onload=function(){ 
-		
+
+	$(document).ready(function(){ 
+
 		var i = -1;
 		var time=0;
 
@@ -73,7 +74,7 @@ $l = $var_vttheme->getParam('layout_home');
 		},function(){
 			time=setInterval("junmper()",3700);
 		})
-		
+
 		function junmper(){
 			i++;
 			if(i>4)
@@ -88,6 +89,6 @@ $l = $var_vttheme->getParam('layout_home');
 			});
 
 		}
-	}
+	});
 
 	</script>
