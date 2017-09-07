@@ -228,7 +228,7 @@
 "Express Checkout and Order have been canceled.","快速结账且订单已取消。"
 "Express Checkout has been canceled.","快速结账已被取消。"
 "Failed to fetch reports from '%s@%s'.","从 '%s@%s'获取报告失败。"
-"Fax","传真"
+"Fax","税"
 "Fee Amount","费率"
 "Fee Debit or Credit","借记卡或信用卡费用"
 "Fee Reversal","撤销手续费"
