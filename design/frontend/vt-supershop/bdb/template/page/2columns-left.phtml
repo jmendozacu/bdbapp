@@ -76,7 +76,15 @@
 							<div class="main">	
 								<?php echo $this->getChildHtml('breadcrumbs') ?>	
 								<div id="box-left" class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-									<?php echo $this->getChildHtml('left') ?>
+									<?php if ($this->getChildHtml('left')) : ?>
+									<div class="left">
+										<?php echo $this->getChildHtml('left'); ?>
+									</div>
+									<?php elseif ($this->getChildHtml('right')) : ?>
+									<div class="right">
+										<?php echo $this->getChildHtml('right'); ?>
+									</div>    
+									<?php endif; ?>
 									<?php if ($this->getChildHtml('position-06')) : ?>
 									<div class="position-06">
 										<?php echo $this->getChildHtml('position-06'); ?>
