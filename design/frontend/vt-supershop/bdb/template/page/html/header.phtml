@@ -421,7 +421,7 @@ if($var_vttheme->getParam('menu_ontop')==1){
 				$('.box-header-02').removeClass('subnav-fixed');
 			}else{				
 				$('#vt_menu').removeClass('subnav-fixed');
-				if(ishome != "" && w >= 1024){
+				if((ishome != "" && ishome != "helpcenter" && ishome != "shippingarea") && w >= 1024){
 					$('.mega-nav').show();
 				}
 			}
