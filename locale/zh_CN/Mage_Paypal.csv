@@ -608,7 +608,7 @@
 "You cannot void a verification transaction","您无法将验证交易作废"
 "You will be redirected to the PayPal website in a few seconds.","几秒钟后，您将被重定向到PayPal网站。"
 "You will be redirected to the PayPal website when you place an order.","在您下单时，您会被重定向到PayPal网站。"
-"You will be redirected to the PayPal website.","您将被重定向到PayPal网站。"
+"You will be redirected to the PayPal website.","您将跳转到Paypal网站，可以选择以信用卡，储蓄卡或Paypal支付。"
 "You will be required to enter your payment details after you place an order.","下单后，您需要输入付款详情。"
 "Zip/Postal Code","邮政编码"
 "chargeback reimbursed","退款偿还"
