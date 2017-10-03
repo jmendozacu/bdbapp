@@ -108,4 +108,15 @@
     'italic' => DOMPDF_FONT_DIR . 'DejaVuSerifCondensed-Italic',
     'normal' => DOMPDF_FONT_DIR . 'DejaVuSerifCondensed',
   ),
+  'arial unicode ms' => 
+  array (
+    'bold' => DOMPDF_FONT_DIR . 'c59c1794447ae95f7f003daeed34f1c1',
+    'bold_italic' => DOMPDF_FONT_DIR . 'c59c1794447ae95f7f003daeed34f1c1',
+    'italic' => DOMPDF_FONT_DIR . 'c59c1794447ae95f7f003daeed34f1c1',
+    'normal' => DOMPDF_FONT_DIR . 'c59c1794447ae95f7f003daeed34f1c1',
+  ),
+  'ar-pl-new-sung' => 
+  array (
+    'normal' => DOMPDF_FONT_DIR . '7938b7388ed3429ea49a8eb0e0034a40',
+  ),
 ) ?>
