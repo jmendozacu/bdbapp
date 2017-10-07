@@ -71,7 +71,7 @@ $l = $var_vttheme->getParam('layout_home');
 		}
 
 		junmper();
-		time=setInterval("junmper()",3700);
+		time=setInterval(junmper,3700);
 		$(".navv ul li").click(function(){
 			i=$(this).index();
 			$(".navv ul li").eq(i).addClass("bg").siblings().removeClass("bg");
@@ -87,7 +87,7 @@ $l = $var_vttheme->getParam('layout_home');
 		$(".navv ul li").hover(function(){
 			clearInterval(time);
 		},function(){
-			time=setInterval("junmper()",3700);
+			time=setInterval(junmper,3700);
 		})
 	});
 
