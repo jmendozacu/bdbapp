@@ -150,9 +150,8 @@ class VES_PdfPro_Model_Order extends VES_PdfPro_Model_Abstract
        				$itemData['sub_items'][]	= $bundleItem;
     			}
     		}else{
-                $sku     = $item->getSku();  
-                $product = Mage::getModel('catalog/product')->load($sku, 'sku');  
-
+                	$sku     = $item->getSku();  
+			$product = Mage::getModel('catalog/product')->loadByAttribute('sku', $sku);
     			$itemData = array(
     				'name'		=> $item->getName(),
     				'sku'		=> $item->getSku(),
@@ -161,7 +160,8 @@ class VES_PdfPro_Model_Order extends VES_PdfPro_Model_Abstract
     				'tax'		=> Mage::helper('pdfpro')->currency($item->getTaxAmount(),$orderCurrencyCode),
     				'subtotal'	=> Mage::helper('pdfpro')->currency($item->getRowTotal(),$orderCurrencyCode),
     				'row_total'	=> Mage::helper('pdfpro')->currency($item->getRowTotalInclTax(),$orderCurrencyCode),
-                    'shortDescription' => $product->getName()
+                    		'shortDescription' => $product->getShortDescription(),
+				'enname' => $product->getName()
     			);
     			$options = $itemModel->getItemOptions($item);
     			$itemData['options']	= array();
