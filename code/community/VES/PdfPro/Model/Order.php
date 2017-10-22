@@ -143,6 +143,7 @@ class VES_PdfPro_Model_Order extends VES_PdfPro_Model_Abstract
 						$bundleItem['tax']		= Mage::helper('pdfpro')->currency($_item->getTaxAmount(),$orderCurrencyCode);
     					$bundleItem['subtotal']	= Mage::helper('pdfpro')->currency($_item->getRowTotal(),$orderCurrencyCode);
     					$bundleItem['row_total']= Mage::helper('pdfpro')->currency($_item->getRowTotalInclTax(),$orderCurrencyCode);
+                        $bundleItem['shortDescription']= Mage::helper('pdfpro')->currency($_item->getShortDescription(),$orderCurrencyCode);
        				}
        				$bundleItem 				= new Varien_Object($bundleItem);
        				Mage::dispatchEvent('ves_pdfpro_data_prepare_after',array('source'=>$bundleItem,'model'=>$_item,'type'=>'item'));
@@ -156,7 +157,8 @@ class VES_PdfPro_Model_Order extends VES_PdfPro_Model_Abstract
     				'qty'		=> $item->getQtyOrdered() * 1,
     				'tax'		=> Mage::helper('pdfpro')->currency($item->getTaxAmount(),$orderCurrencyCode),
     				'subtotal'	=> Mage::helper('pdfpro')->currency($item->getRowTotal(),$orderCurrencyCode),
-    				'row_total'	=> Mage::helper('pdfpro')->currency($item->getRowTotalInclTax(),$orderCurrencyCode)
+    				'row_total'	=> Mage::helper('pdfpro')->currency($item->getRowTotalInclTax(),$orderCurrencyCode),
+                    'shortDescription' => Mage::helper('pdfpro')->currency($item->getShortDescription(),$orderCurrencyCode)
     			);
     			$options = $itemModel->getItemOptions($item);
     			$itemData['options']	= array();
