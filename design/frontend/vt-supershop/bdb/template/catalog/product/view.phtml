@@ -57,7 +57,7 @@ global $var_vttheme;
                 </div>            
                 <div class="product-shop">
                     <div class="product-name">
-                        <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+                        <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>  <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?></h1>
                     </div>
                     <div class="wrap-er">
                     <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
