@@ -73,7 +73,7 @@ $l = $var_vttheme->getParam('layout_home');
 		}
 
 		junmper();
-		time=setInterval(junmper,4700);
+		time=setInterval(junmper,5000);
 		$(".navv ul li").click(function(){
 			i=$(this).index();
 			$(".navv ul li").eq(i).addClass("bg").siblings().removeClass("bg");
@@ -88,16 +88,16 @@ $l = $var_vttheme->getParam('layout_home');
 			// });
 
 		})
-		$(".pic ul li").hover(function(){
-			clearInterval(time);
-		},function(){
-			time=setInterval("junmper()",4700);
-		})
-		$(".navv ul li").hover(function(){
-			clearInterval(time);
-		},function(){
-			time=setInterval(junmper,4700);
-		})
+		// $(".pic ul li").hover(function(){
+		// 	clearInterval(time);
+		// },function(){
+		// 	time=setInterval("junmper()",4700);
+		// })
+		// $(".navv ul li").hover(function(){
+		// 	clearInterval(time);
+		// },function(){
+		// 	time=setInterval(junmper,4700);
+		// })
 	});
 
 	</script>
