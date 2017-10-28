@@ -32,15 +32,6 @@
  */
 ?>
 
-<div>
-        <?php foreach($this->getItems() as $_item): ?>
-        <?php foreach(get_object_vars($_item) as $key => $value): ?>
-} 
-            <?php echo $value ."-----". $key ."-----". "<br>"?>
-        <?php endforeach ?>
-        <?php endforeach ?>
-</div>
-
 <?php
     $methods = $this->getMethods();
     $oneMethod = count($methods) <= 1;
