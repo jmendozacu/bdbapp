@@ -32,6 +32,7 @@
  * @package    Mage_Checkout
  * @author      Magento Core Team <core@magentocommerce.com>
  */
+
 class Mage_Checkout_Block_Onepage_Payment_Methods extends Mage_Payment_Block_Form_Container
 {
     public function getQuote()
@@ -95,5 +96,20 @@ class Mage_Checkout_Block_Onepage_Payment_Methods extends Mage_Payment_Block_For
         if ($form = $this->getChild('payment.method.' . $method->getCode())) {
             return $form->getMethodLabelAfterHtml();
         }
+    }
+
+    // public function getItemHtml(Varien_Object $item)
+    // {
+    //     return Mage_Checkout_Block_Onepage_Review_Info::getItemHtml($item);
+    // }
+
+    public function getItems()
+    {
+        return Mage::getSingleton('checkout/session')->getQuote()->getAllVisibleItems();
+    }
+
+    public function getTotals()
+    {
+        return Mage::getSingleton('checkout/session')->getQuote()->getTotals();
     }
 }
