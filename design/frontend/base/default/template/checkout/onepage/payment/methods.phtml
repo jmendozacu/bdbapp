@@ -33,6 +33,15 @@
 ?>
 
 <?php
+    $items = Mage::getSingleton('checkout/session')->getQuote()->getAllItems();
+    foreach($items as $item) {
+        ?>
+        <a id="dhtest"><?php echo 'Name: '.$item->getName().'';?></a>
+        <?php
+    }
+?>
+
+<?php
     $methods = $this->getMethods();
     $oneMethod = count($methods) <= 1;
 ?>
