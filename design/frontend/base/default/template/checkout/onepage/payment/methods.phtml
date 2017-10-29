@@ -32,14 +32,72 @@
  */
 ?>
 
-<?php
-    $items = Mage::getSingleton('checkout/session')->getQuote()->getAllItems();
-    foreach($items as $item) {
-        ?>
-        <a id="dhtest"><?php echo 'Name: '.$item->getName().'';?></a>
-        <?php
-    }
-?>
+<div id="checkout-review-table-wrapper">
+    <table class="data-table" id="checkout-review-table">
+        <col />
+        <col width="1" />
+        <col width="1" />
+        <col width="1" />
+        <thead>
+            <tr>
+                <th rowspan="<?php echo $rowspan ?>"><?php echo $this->__('Product Name') ?></th>
+                <th colspan="<?php echo $colspan ?>" class="a-center"><?php echo $this->__('Price') ?></th>
+                <th rowspan="<?php echo $rowspan ?>" class="a-center"><?php echo $this->__('Qty') ?></th>
+                <th colspan="<?php echo $colspan ?>" class="a-center"><?php echo $this->__('Subtotal') ?></th>
+            </tr>
+        </thead>
+        <?php $totals = Mage::getSingleton('checkout/session')->getQuote()->getTotals(); 
+        $subtotal = $totals["subtotal"]->getValue();
+        $grandtotal = $totals["grand_total"]->getValue();
+        $tax = $totals['tax']->getValue();
+        $subtotalexcltax = $subtotal - $tax;
+        $grandtotalexcltax = $grandtotal - $tax;
+        ?> 
+        <tfoot>
+        <tr>
+            <td style="" class="a-right" colspan="3">小计（不含税）    </td>
+            <td style="" class="a-right"><span class="price"><?php echo 'CA$'.$subtotalexcltax ?></span></td>
+        </tr>
+        <tr>
+            <td style="" class="a-right" colspan="3">小计（含税）    </td>
+            <td style="" class="a-right"><span class="price"><?php echo 'CA$'.$subtotal ?></span></td>
+        </tr>
+        <tr>
+            <td style="" class="a-right" colspan="3">运费和手续费 (Flat Rate - Fixed)    </td>
+            <td style="" class="a-right"><span class="price"><?php echo 'CA$'.Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress()->getShipping_amount(); ?></span></td>
+        </tr>
+        <tr>
+            <td style="" class="a-right" colspan="3"><strong>合计不含税</strong></td>
+            <td style="" class="a-right"><strong><span class="price"><?php echo 'CA$'.$grandtotalexcltax ?></span></strong></td>
+        </tr>
+        <tr>
+            <td style="" class="a-right" colspan="3">税            </td>
+            <td style="" class="a-right"><span class="price"><?php echo 'CA$'.$tax ?></span></td>
+        </tr>
+        <tr>
+            <td style="" class="a-right" colspan="3"><strong>合计含税</strong></td>
+            <td style="" class="a-right"><strong><span class="price"><?php echo 'CA$'.$grandtotal ?></span></strong></td>
+        </tr>
+        </tfoot>
+        <tbody>
+        <?php foreach(Mage::getSingleton('checkout/session')->getQuote()->getAllItems() as $item): ?>
+            <tr>
+            <td><h3 class="product-name"><?php echo $item->getName().'';?></h3></td>
+            <td class="a-right">
+                <span class="cart-price">
+                <span class="price"><?php echo $item->getPrice().'';?></span> </span>
+            </td>
+            <td class="a-center"><?php echo $item->getQty().'';?></td>
+    <!-- sub total starts here -->
+            <td class="a-right">
+                <span class="cart-price">
+                <span class="price"><?php echo 'CA$'.$item->getQty()*$item->getPrice().'';?></span></span>
+            </td>
+            </tr>
+        <?php endforeach ?>
+        </tbody>
+    </table>
+</div>
 
 <?php
     $methods = $this->getMethods();
@@ -53,17 +111,18 @@
     foreach ($methods as $_method):
         $_code = $_method->getCode();
 ?>
-    <dt>
+    <dt style="float:right;">
     <?php if(!$oneMethod): ?>
         <input id="p_method_<?php echo $_code ?>" value="<?php echo $_code ?>" type="radio" name="payment[method]" title="<?php echo $this->escapeHtml($_method->getTitle()) ?>" onclick="payment.switchMethod('<?php echo $_code ?>')"<?php if($this->getSelectedMethodCode()==$_code): ?> checked="checked"<?php endif; ?> class="radio" />
     <?php else: ?>
         <span class="no-display"><input id="p_method_<?php echo $_code ?>" value="<?php echo $_code ?>" type="radio" name="payment[method]" checked="checked" class="radio" /></span>
         <?php $oneMethod = $_code; ?>
     <?php endif; ?>
-        <label for="p_method_<?php echo $_code ?>"><?php echo $this->escapeHtml($this->getMethodTitle($_method)) ?> <?php echo $this->getMethodLabelAfterHtml($_method) ?></label>
+        <label for="p_method_<?php echo $_code ?>" onclick="payment.save()"><?php echo $this->escapeHtml($this->getMethodTitle($_method)) ?> <?php echo $this->getMethodLabelAfterHtml($_method) ?></label>
     </dt>
     <?php if ($html = $this->getPaymentMethodFormHtml($_method)): ?>
-    <dd>
+    <br><br><br>
+    <dd style="float:right;">
         <?php echo $html; ?>
     </dd>
     <?php endif; ?>
