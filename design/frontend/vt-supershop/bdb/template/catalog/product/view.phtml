@@ -148,9 +148,9 @@ global $var_vttheme;
                     <?php endif; ?>   
 
                     <?php if($additional = $this->getChildHtml('product.attributes')): ?>
-                    <li>                 
+<!--                     <li>                 
                         <a href="#additional"><?php echo $this->__('Additional Information') ?></a>
-                    </li>
+                    </li> -->
                     <?php endif; ?>
                     <?php $customBlock = $this->getLayout()->createBlock('cms/block')->setBlockId('custom-block')->toHtml();?>
                     <?php if($customBlock) { ?>
