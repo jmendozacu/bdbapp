@@ -222,5 +222,15 @@
             }
         });
     }
+
+    // set default country
+    var select_node = document.getElementById('billing:country_id');
+    var options = select_node.children;
+    var len = options.length;
+    for (var i = 0; i < len; i ++){
+        if(options[i].value == 'CA'){
+            options[i].selected = true;
+        }
+    };
 //]]>
 </script>
