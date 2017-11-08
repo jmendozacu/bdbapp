@@ -224,27 +224,30 @@
     }
 
     // // set default country
-    // var select_node = document.getElementById('billing:country_id');
-    // var options = select_node.children;
-    // var len = options.length;
-    // for (var i = 0; i < len; i ++){
-    //     if(options[i].value == 'CA'){
-    //         options[i].selected = true;
-    //     }
-    // };
+    var select_node = document.getElementById('billing:country_id');
+    var options = select_node.children;
+    var len = options.length;
+    for (var i = 0; i < len; i ++){
+        if(options[i].value == 'CA'){
+            options[i].selected = true;
+        }
+    };
 
     // // trigger change event
-    // if(select_node.fireEvent) {
-    //     select_node.fireEvent('onchange');
-    // } else if(select_node.change){
-    //     select_node.change();
-    // }
+    if (select_node.fireEvent){
+        select_node.fireEvent('onchange');
+    }
+    else{
+        ev = document.createEvent("HTMLEvents");  
+        ev.initEvent("change", false, true);  
+        select_node.dispatchEvent(ev);  
+    }
 
     // // set default province
-    // var province_input_node = document.getElementById('billing:region');
-    // province_input_node.style.display = 'none';
-    // var province_select_node = document.getElementById('billing:region_id');
-    // province_select_node.style.display = 'block';
+    var province_input_node = document.getElementById('billing:region');
+    province_input_node.style.display = 'none';
+    var province_select_node = document.getElementById('billing:region_id');
+    province_select_node.style.display = 'block';
 
 //]]>
 </script>
