@@ -223,7 +223,7 @@
         });
     }
 
-    // // set default country
+    // set default country
     var select_node = document.getElementById('billing:country_id');
     var options = select_node.children;
     var len = options.length;
@@ -233,7 +233,7 @@
         }
     };
 
-    // // trigger change event
+    // trigger change event
     if (select_node.fireEvent){
         select_node.fireEvent('onchange');
     }
@@ -243,11 +243,12 @@
         select_node.dispatchEvent(ev);  
     }
 
-    // // set default province
+    // set default province
     var province_input_node = document.getElementById('billing:region');
     province_input_node.style.display = 'none';
     var province_select_node = document.getElementById('billing:region_id');
     province_select_node.style.display = 'block';
+    province_select_node.value = '74'
 
 //]]>
 </script>
