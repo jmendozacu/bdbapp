@@ -412,7 +412,6 @@ if($var_vttheme->getParam('menu_ontop')==1){
 			if(layout == 3){
 				$('.box-header-02').addClass('subnav-fixed');
 			}else{
-				$('.mega-nav').hide();
 				$('#vt_menu').addClass('subnav-fixed');
 			}
 
@@ -421,9 +420,6 @@ if($var_vttheme->getParam('menu_ontop')==1){
 				$('.box-header-02').removeClass('subnav-fixed');
 			}else{				
 				$('#vt_menu').removeClass('subnav-fixed');
-				if((ishome != "" && ishome != "helpcenter" && ishome != "shippingarea") && w >= 1024){
-					$('.mega-nav').show();
-				}
 			}
 					
 		}
