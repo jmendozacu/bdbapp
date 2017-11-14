@@ -379,7 +379,6 @@ if($var_vttheme->getParam('menu_ontop')==1){
 ?>
 <script type="text/javascript">                
  	jQuery(document).ready(function($){
- 		$('ul.mega-nav').css('display', 'none');
 		var ishome="<?php echo Mage::getSingleton('cms/page')->getIdentifier(); ?>";	
 		var layout = "<?php echo $var_vttheme->getParam('layout_home'); ?>";	
 		var w = $(window).width(); 
@@ -411,6 +410,7 @@ if($var_vttheme->getParam('menu_ontop')==1){
 				}else{
 					$('#vt_menu').addClass('subnav-fixed');
 				}
+				$('.mega-nav').hide();
 			}
 			else if (scrollTop <= menu_offset_top) {		
 				if(layout == 3){
