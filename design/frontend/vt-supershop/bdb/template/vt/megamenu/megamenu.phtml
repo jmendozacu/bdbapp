@@ -242,3 +242,10 @@ $home = '';
 <?php endif; ?>
 <?php } ?>
 <!--end layout home-03-->
+
+<script type="text/javascript">
+	$('li.parent').each(function(index){
+		move = index * 40 + "px";
+		$(this).find('div.submenu').css('top', move);
+	});
+</script>
