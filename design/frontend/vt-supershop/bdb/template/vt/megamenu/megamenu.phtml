@@ -180,6 +180,58 @@ $home = '';
         $('.vertical-menu .title-menu').click(function(){        	
             $(".mega-nav").slideToggle("fast");
         });         
+
+		var ishome="<?php echo Mage::getSingleton('cms/page')->getIdentifier(); ?>";	
+		var layout = "<?php echo $var_vttheme->getParam('layout_home'); ?>";	
+		var w = $(window).width(); 
+		if(ishome == 'home'){
+			menu_offset_top = 500;
+		}
+
+		if ((ishome != 'home') ||(ishome != 'home-04')){
+			menu_offset_top = $('#box-header').outerHeight();
+		}
+
+		if(ishome == 'home-02'){
+			menu_offset_top = 422;
+		}
+
+		if(ishome != 'home-02' && layout == 2){
+			menu_offset_top = $('#vt_menu').outerHeight();
+		}
+
+		if(layout == 3){
+			menu_offset_top = $('.box-header-02').outerHeight();
+		}
+
+		function processScroll() {
+			var scrollTop = $( window ).scrollTop();
+			if ( scrollTop >= menu_offset_top) {
+				$('.mega-nav').hide();
+				$('.mega-nav').css('display', 'none');
+				if(layout == 3){
+					$('.box-header-02').addClass('subnav-fixed');
+				}else{
+					$('#vt_menu').addClass('subnav-fixed');
+				}
+			}
+			else if (scrollTop <= menu_offset_top) {		
+				if(layout == 3){
+					$('.box-header-02').removeClass('subnav-fixed');
+				}else{
+					$('#vt_menu').removeClass('subnav-fixed');
+				}
+			}
+		}
+
+		$( window ).scroll(function() {
+			processScroll();
+		}); 
+
+	 	if(w < 1024){
+	 		$(".mega-nav").css('display','none');
+	 	}
+
     });
 </script>
 
