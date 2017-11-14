@@ -99,7 +99,7 @@ $home = '';
      	<?php if($isHomepage != 'home' && $isHomepage != 'home-02'){ ?>		                        
        		$(".mega-nav").hide();
        <?php }?>
-        $('.vertical-menu .title-menu').click(function(){        	
+        $('.vertical-menu .title-menu').hover(function(){        	
             $(".mega-nav").slideToggle("fast");
         });         
 
@@ -234,7 +234,7 @@ $home = '';
        		$(".mega-nav").hide();
        <?php }?>
 
-        $('.vertical-menu .title-menu').click(function(){        	
+        $('.vertical-menu .title-menu').hover(function(){        	
             $(".mega-nav").slideToggle("fast");
         });         
 
@@ -353,7 +353,6 @@ $home = '';
 <?php else: ?>
 <p class="note-msg"><?php echo $this->__('There are no items matching the selection.') ?></p>
 <?php endif; ?>
-<?php } ?>
 <script type="text/javascript">                
      jQuery(document).ready(function($){ 
      	var w = $(window).width();
@@ -363,7 +362,7 @@ $home = '';
      	<?php if($isHomepage != 'home' && $isHomepage != 'home-02'){ ?>		                        
        		$(".mega-nav").hide();
        <?php }?>
-        $('.vertical-menu .title-menu').click(function(){        	
+        $('.vertical-menu .title-menu').hover(function(){        	
             $(".mega-nav").slideToggle("fast");
         });         
 
@@ -424,4 +423,6 @@ $home = '';
 
     });
 </script>
+<?php } ?>
+
 <!--end layout home-03-->
