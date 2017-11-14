@@ -245,7 +245,13 @@ $home = '';
 
 <script type="text/javascript">
 	$('li.parent').each(function(index){
-		move = index * 40 + "px";
+		if(index > 1){
+			height = $(this).find('div.submenu').height();
+			move = index * 40 - height / 4 + "px";
+		}
+		else{
+			move = index * 40 + "px";
+		}
 		$(this).find('div.submenu').css('top', move);
 	});
 </script>
