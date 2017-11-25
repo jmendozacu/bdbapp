@@ -176,8 +176,8 @@ class Mage_Checkout_Block_Cart_Item_Renderer extends Mage_Core_Block_Template
 
     public function getShortDescription()
     {
-        $name = $this->getProduct()->getName();
-        $product = Mage::getModel('catalog/product')->loadByAttribute('name', $name);
+        $name = $this->getProduct()->getSku();
+        $product = Mage::getModel('catalog/product')->loadByAttribute('sku', $name);
         return $product->getShortDescription();
     }
 
