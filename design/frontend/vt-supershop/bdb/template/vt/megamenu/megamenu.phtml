@@ -96,6 +96,17 @@ $home = '';
      	if(w < 1024){     	
      		$(".mega-nav").hide();
      	}
+     	// 修改首页二级分类标签位置
+     	$('li.level0').each(function(index){
+			if(index > 1){
+				height = $(this).find('div.have-spetitle').height();
+				move = index * 40 - height / 4 - 20 + "px";
+			}
+			else{
+				move = index * 40 + "px";
+			}
+			$(this).find('div.have-spetitle').css('top', move);
+		});
      	<?php if($isHomepage != 'home' && $isHomepage != 'home-02'){ ?>		                        
        		$(".mega-nav").hide();
        <?php }?>
@@ -179,7 +190,17 @@ $home = '';
        <?php }?>
         $('.vertical-menu .title-menu').click(function(){        	
             $(".mega-nav").slideToggle("fast");
-        });         
+        });
+        $('li.level0').each(function(index){
+			if(index > 1){
+				height = $(this).find('div.have-spetitle').height();
+				move = index * 40 - height / 4 - 20 + "px";
+			}
+			else{
+				move = index * 40 + "px";
+			}
+			$(this).find('div.have-spetitle').css('top', move);
+		});
     });
 </script>
 
@@ -242,16 +263,3 @@ $home = '';
 <?php endif; ?>
 <?php } ?>
 <!--end layout home-03-->
-
-<script type="text/javascript">
-	$('li.level0').each(function(index){
-		if(index > 1){
-			height = $(this).find('div.have-spetitle').height();
-			move = index * 40 - height / 4 - 20 + "px";
-		}
-		else{
-			move = index * 40 + "px";
-		}
-		$(this).find('div.have-spetitle').css('top', move);
-	});
-</script>
