@@ -371,7 +371,7 @@
 "Either remote URL or application code was not set. Please make sure you filled all the values and try again.","Either remote URL or application code was not set. Please make sure you filled all the values and try again."
 "Element with id %s already exists","ID ％s 元素已存在"
 "Email","电子邮件"
-"Email Address","编辑电子邮件地址"
+"Email Address","电子邮件地址"
 "Email address you provided is not valid. Please provide a valid one.","Email address you provided is not valid. Please provide a valid one."
 "Email is not correct","Email is not correct"
 "Email is not specified","Email is not specified"
