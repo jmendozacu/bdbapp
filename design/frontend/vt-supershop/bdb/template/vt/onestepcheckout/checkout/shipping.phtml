@@ -43,12 +43,12 @@
                     <ul>
                         <li class="fields"><?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getAddress())->setFieldIdFormat('shipping:%s')->setFieldNameFormat('shipping[%s]')->setFieldParams('onchange="shipping.setSameAsBilling(false)"')->toHtml() ?></li>
                         <li class="fields shipping-company">
-                            <div class="fields">
-                                <label for="shipping:company"><?php echo $this->__('Company') ?></label>
+<!--                             <div class="fields">
+                                <label for="shipping:company"><?php //echo $this->__('Company') ?></label>
                                 <div class="input-box">
-                                    <input type="text" id="shipping:company" name="shipping[company]" value="<?php echo $this->htmlEscape($this->getAddress()->getCompany()) ?>" title="<?php echo $this->__('Company') ?>" class="input-text" onchange="shipping.setSameAsBilling(false);" />
+                                    <input type="text" id="shipping:company" name="shipping[company]" value="<?php //echo $this->htmlEscape($this->getAddress()->getCompany()) ?>" title="<?php //echo $this->__('Company') ?>" class="input-text" onchange="shipping.setSameAsBilling(false);" />
                                 </div>
-                            </div>
+                            </div> -->
                             <?php if (false): ?>
                                 <div class="fields">
                                     <label for="shipping:email" class="required"><em>*</em><?php echo $this->__('Email Address') ?></label>
@@ -140,12 +140,12 @@
 <?php endif; ?>
                 <?php if (!$this->settings['display_fax']): ?>
                                                 <li class="fieldsbilling">
-                                                    <div class="field">
-                                                        <label for="shipping:fax"><?php echo $this->__('Fax') ?></label>
+<!--                                                     <div class="field">
+                                                        <label for="shipping:fax"><?php //echo $this->__('Fax') ?></label>
                                                         <div class="input-box">
-                                                            <input type="text" name="shipping[fax]" value="<?php echo $this->htmlEscape($this->getAddress()->getFax()) ?>" title="<?php echo $this->__('Fax') ?>" class="input-text" id="shipping:fax" onchange="shipping.setSameAsBilling(false);" />
+                                                            <input type="text" name="shipping[fax]" value="<?php //echo $this->htmlEscape($this->getAddress()->getFax()) ?>" title="<?php //echo $this->__('Fax') ?>" class="input-text" id="shipping:fax" onchange="shipping.setSameAsBilling(false);" />
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                 </li>
 <?php endif; ?>
 
