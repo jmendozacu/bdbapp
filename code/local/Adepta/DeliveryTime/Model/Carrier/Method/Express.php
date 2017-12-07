@@ -19,15 +19,15 @@ class Adepta_DeliveryTime_Model_Carrier_Method_Express extends
 Adepta_DeliveryTime_Model_Carrier_Method_Abstract 
 {
     protected $_startDaysOffset = 1;
-    protected $_endDaysOffset = 10;
+    protected $_endDaysOffset = 2;
     
     public function getCost()
     {
-        return 5.00;
+        return 0.00;
     }
  
     public function getPrice()
     {
-        return 10.00;
+        return 0.00;
     }
 }

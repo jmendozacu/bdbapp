@@ -46,7 +46,7 @@ implements Mage_Shipping_Model_Carrier_Interface {
  
     public function getAllowedMethods()
     {
-        $methods = array('express' => 'Express', 'standard' => 'Standard', 'budget' =>'Budget');  
+        $methods = array('express' => 'Express');  
         return $methods;
     }
 
