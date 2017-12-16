@@ -656,6 +656,26 @@ class Mage_Checkout_Model_Type_Onepage
         if (!$rate) {
             return array('error' => -1, 'message' => Mage::helper('checkout')->__('Invalid shipping method.'));
         }
+        //如果账单地址直接设置送货地址用账单地址，会直接跳到保存配送方法，这里校验一次zipcode
+        //zipcode check
+        $collection = Mage::getModel('shippingrestriction/shippingzip')->getCollection();
+
+        $zipcode = array();
+        foreach ($collection as $value)
+        {
+            $zipcode[] = $value->zipcode;
+        }
+        // $address = Mage::getSingleton('checkout/session')->getQuote()
+        // ->getShippingAddress();   
+        $address = $this->getQuote()->getShippingAddress();
+        if (!$this->_checkZipcode($address->getData('postcode'),$zipcode)) {
+                return array('error' => 1,
+                    'message' => Mage::helper('checkout')->__('Sorry, no quotes are available for this order at this time. Plase return previous step and modify the zipcode.')
+                );
+        }
+
+        //zipcode  check
+            
         $this->getQuote()->getShippingAddress()
             ->setShippingMethod($shippingMethod);
 
