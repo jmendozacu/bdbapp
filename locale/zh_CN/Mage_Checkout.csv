@@ -282,7 +282,7 @@
 "Set shipping method","设置配送方式"
 "Ship to Multiple Addresses","配送到多个地址"
 "Ship to different address","送货到不同地址"
-"Ship to this address","配送到这个地址"
+"Ship to this address","配送到这个地址(如果这个地址不支持配送，需要修改配送地址邮编)"
 "Shipping Address","送货地址"
 "Shipping Information","配送信息"
 "Shipping Method","配送方式"
