@@ -105,6 +105,8 @@ class Mage_Catalog_Model_Product_Api extends Mage_Catalog_Model_Api_Resource
         }
         $result = array();
         foreach ($collection as $product) {
+            $name = $product->getSku();
+            $product = Mage::getModel('catalog/product')->loadByAttribute('sku', $name);
             $result[] = array(
                 'product_id' => $product->getId(),
                 'sku'        => $product->getSku(),
