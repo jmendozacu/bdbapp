@@ -115,9 +115,9 @@ class Mage_Catalog_Model_Product_Api extends Mage_Catalog_Model_Api_Resource
                 'type'       => $product->getTypeId(),
                 'price'       => $product->getPrice(),
                 'short_description' => $product->getShortDescription(),
+                'image'        => $product->getImage(),
                 'category_ids' => $product->getCategoryIds(),
                 'website_ids'  => $product->getWebsiteIds()
-
             );
         }
         return $result;
