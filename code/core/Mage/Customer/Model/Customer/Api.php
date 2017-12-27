@@ -193,4 +193,26 @@ class Mage_Customer_Model_Customer_Api extends Mage_Customer_Model_Api_Resource
         return true;
     }
 
+    /**
+    * login check
+    */
+    public function mlogin($email, $password){
+            /** @var $session Mage_Customer_Model_Session */
+            $session = Mage::getSingleton( 'customer/session' );
+            Mage::app()->getStore()->setWebsiteId(1);
+            try
+            {
+                $session->login( $email, $password );
+                $customer = $session->getCustomer();
+
+                // return json_encode(array('status' => 'OK', 'userData' => $this->info($customer->getId())));
+                return $customer->getId;
+            }
+            catch( Exception $e )
+            {
+                // return json_encode(array('status' => 'error', 'message' => $e->getMessage()));
+                return -1;
+            }
+    }
+
 } // Class Mage_Customer_Model_Customer_Api End

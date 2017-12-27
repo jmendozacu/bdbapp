@@ -54,6 +54,10 @@
                         <title>Delete customer</title>
                         <acl>customer/delete</acl>
                     </delete>
+                    <mlogin translate="title" module="customer">
+                        <title>mlogin</title>
+                        <acl>customer/mlogin</acl>
+                    </mlogin>
                 </methods>
                 <faults module="customer">
                     <data_invalid>
@@ -156,6 +160,9 @@
                      <info translate="title" module="customer">
                         <title>Retrieve customer info</title>
                      </info>
+                     <mlogin translate="title" module="customer">
+                        <title>mlogin</title>
+                     </mlogin>
                      <address translate="title" module="customer">
                          <title>Addresses</title>
                          <sort_order>100</sort_order>
