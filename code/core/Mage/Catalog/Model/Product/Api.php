@@ -92,7 +92,9 @@ class Mage_Catalog_Model_Product_Api extends Mage_Catalog_Model_Api_Resource
         $collection = Mage::getModel('catalog/product')->getCollection()
             ->addStoreFilter($this->_getStoreId($store))
             ->addAttributeToSelect('name')
-            ->addAttributeToSelect('image');
+            ->addAttributeToSelect('image')
+            ->addAttributeToSelect('short_description')
+            ->addAttributeToSelect('price');
 
         /** @var $apiHelper Mage_Api_Helper_Data */
         $apiHelper = Mage::helper('api');
@@ -106,8 +108,6 @@ class Mage_Catalog_Model_Product_Api extends Mage_Catalog_Model_Api_Resource
         }
         $result = array();
         foreach ($collection as $product) {
-            // $name = $product->getSku();
-            // $product = Mage::getModel('catalog/product')->loadByAttribute('sku', $name);
             $result[] = array(
                 'product_id' => $product->getId(),
                 'sku'        => $product->getSku(),
