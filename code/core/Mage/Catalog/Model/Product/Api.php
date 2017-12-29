@@ -148,7 +148,8 @@ class Mage_Catalog_Model_Product_Api extends Mage_Catalog_Model_Api_Resource
             'set'        => $product->getAttributeSetId(),
             'type'       => $product->getTypeId(),
             'categories' => $product->getCategoryIds(),
-            'websites'   => $product->getWebsiteIds()
+            'websites'   => $product->getWebsiteIds(),
+            'image'        => $product->getImage()
         );
 
         foreach ($product->getTypeInstance(true)->getEditableAttributes($product) as $attribute) {
