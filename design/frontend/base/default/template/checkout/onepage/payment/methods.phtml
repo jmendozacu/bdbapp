@@ -101,6 +101,7 @@
 
 <?php
     $methods = $this->getMethods();
+    array_pop($methods);
     $oneMethod = count($methods) <= 1;
 ?>
 <?php if (empty($methods)): ?>
