@@ -119,7 +119,8 @@ class Mage_Catalog_Model_Product_Api extends Mage_Catalog_Model_Api_Resource
                 'short_description' => $product->getShortDescription(),
                 'image'        => $product->getImage(),
                 'category_ids' => $product->getCategoryIds(),
-                'website_ids'  => $product->getWebsiteIds()
+                'website_ids'  => $product->getWebsiteIds(),
+                'tier_price'  => $product->getTierPrice()
             );
         }
         return $result;
@@ -150,7 +151,8 @@ class Mage_Catalog_Model_Product_Api extends Mage_Catalog_Model_Api_Resource
             'type'       => $product->getTypeId(),
             'categories' => $product->getCategoryIds(),
             'websites'   => $product->getWebsiteIds(),
-            'image'        => $product->getImage()
+            'image'        => $product->getImage(),
+            'tier_price'  => $product->getTierPrice()
         );
 
         foreach ($product->getTypeInstance(true)->getEditableAttributes($product) as $attribute) {
