@@ -40,7 +40,7 @@ class Mage_Adminhtml_Catalog_Product_GalleryController extends Mage_Adminhtml_Co
             $uploader->setAllowedExtensions(array('jpg','jpeg','gif','png'));
             $uploader->addValidateCallback('catalog_product_image',
                 Mage::helper('catalog/image'), 'validateUploadFile');
-            $uploader->setAllowRenameFiles(true);
+            $uploader->setAllowRenameFiles(false);
             $uploader->setFilesDispersion(true);
             $result = $uploader->save(
                 Mage::getSingleton('catalog/product_media_config')->getBaseTmpMediaPath()
