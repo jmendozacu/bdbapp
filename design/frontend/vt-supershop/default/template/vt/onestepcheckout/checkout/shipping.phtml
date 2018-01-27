@@ -171,4 +171,30 @@
   var shippingRegionUpdater = new RegionUpdater('shipping:country_id', 'shipping:region', 'shipping:region_id', countryRegions, undefined, 'shipping:postcode');
 <?php endif; ?>
     //]]>
+            // set default country
+    var select_node = document.getElementById('shipping:country_id');
+    var options = select_node.children;
+    var len = options.length;
+    for (var i = 0; i < len; i ++){
+        if(options[i].value == 'CA'){
+            options[i].selected = true;
+        }
+    };
+
+    // trigger change event
+    if (select_node.fireEvent){
+        select_node.fireEvent('onchange');
+    }
+    else{
+        ev = document.createEvent("HTMLEvents");  
+        ev.initEvent("change", false, true);  
+        select_node.dispatchEvent(ev);  
+    }
+
+    // set default province
+    var province_input_node = document.getElementById('shipping:region');
+    province_input_node.style.display = 'none';
+    var province_select_node = document.getElementById('shipping:region_id');
+    province_select_node.style.display = 'block';
+    province_select_node.value = '74';
 </script>
