@@ -33,6 +33,11 @@
                 <title>Shopping Cart</title>
                 <acl>cart</acl>
                 <methods>
+                    <quotebyuserid translate="title" module="checkout">
+                        <title>Quote by Customer id</title>
+                        <method>quotebyuserid</method>
+                        <acl>cart/quotebyuserid</acl>
+                    </quotebyuserid>
                     <create translate="title" module="checkout">
                         <title>Create shopping cart</title>
                         <method>create</method>
@@ -425,6 +430,9 @@
             <resources>
                 <cart translate="title" module="checkout">
                     <title>Shopping Cart</title>
+                    <quotebyuserid translate="title" module="checkout">
+                        <title>Quote By Customer Id</title>
+                    </quotebyuserid>
                     <create translate="title" module="checkout">
                         <title>Create shopping cart</title>
                     </create>

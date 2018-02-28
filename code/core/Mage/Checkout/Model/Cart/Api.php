@@ -43,6 +43,15 @@ class Mage_Checkout_Model_Cart_Api extends Mage_Checkout_Model_Api_Resource
         $this->_attributesMap['quote_payment'] = array('payment_id' => 'entity_id');
     }
 
+    public function quotebyuserid($customerid)
+    {
+        $quote = Mage::getModel('sales/quote')
+            ->setSharedStoreIds(16)
+            ->loadByCustomer($customerid);
+
+        return (int) $quote->getId();
+    }
+
     /**
      * Create new quote for shopping cart
      *
