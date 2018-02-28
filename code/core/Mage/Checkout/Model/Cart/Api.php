@@ -45,10 +45,13 @@ class Mage_Checkout_Model_Cart_Api extends Mage_Checkout_Model_Api_Resource
 
     public function quotebyuserid($customerid)
     {
+        $storeIds = Mage::app()->getWebsite($this->getWebsiteId())->getStoreIds();
         $quote = Mage::getModel('sales/quote')
-            ->setSharedStoreIds(16)
+            ->setSharedStoreIds($storeIds)
             ->loadByCustomer($customerid);
 
+        // $collection = $quote->getItemsCollection(false);
+        
         return (int) $quote->getId();
     }
 
