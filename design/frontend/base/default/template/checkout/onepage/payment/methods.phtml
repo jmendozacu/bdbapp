@@ -101,6 +101,11 @@
 
 <?php
     $methods = $this->getMethods();
+    foreach($methods as $k=>$v){  
+        if($v->getCode() == 'cashondelivery'){  
+            unset($methods[$k]);  
+        }  
+    } 
     array_pop($methods);
     $oneMethod = count($methods) <= 1;
 ?>
