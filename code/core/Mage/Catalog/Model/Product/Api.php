@@ -120,7 +120,8 @@ class Mage_Catalog_Model_Product_Api extends Mage_Catalog_Model_Api_Resource
                 'image'        => $product->getImage(),
                 'category_ids' => $product->getCategoryIds(),
                 'website_ids'  => $product->getWebsiteIds(),
-                'tier_price'  => $product->getTierPrice()
+                'tier_price'  => $product->getTierPrice(),
+                'special_price' => $product->getSpecialPrice()
             );
         }
         return $result;
