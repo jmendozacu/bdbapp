@@ -95,6 +95,7 @@ class Mage_Catalog_Model_Product_Api extends Mage_Catalog_Model_Api_Resource
             ->addAttributeToSelect('short_description')
             ->addAttributeToSelect('price')
             ->addAttributeToSelect('tier_price')
+            ->addAttributeToSelect('special_price')
 	    ->setStore($store);
 
         /** @var $apiHelper Mage_Api_Helper_Data */
