@@ -112,5 +112,48 @@ class Mage_Checkout_Model_Cart_Shipping_Api extends Mage_Checkout_Model_Api_Reso
         return $ratesResult;
     }
 
+    public function checkZipCode($zipcode)
+    {
+        $collection = Mage::getModel('shippingrestriction/shippingzip')->getCollection();
+
+        $zipcodes = array();
+        foreach ($collection as $value)
+        {
+            $zipcodes[] = $value->zipcode;
+        }
+        if (!$this->_checkZipcode($zipcode,$zipcodes)) {
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+    public function _checkZipcode($zipcode,$zipcodes)
+    {
+        foreach ($zipcodes as $value)
+        {
+            if (strstr($value,"*"))
+            {
+                $newvalue = str_replace("*", "", $value);
+                $zipcode_space = str_replace(" ", "", $zipcode);
+                $zipcode_up = strtoupper($zipcode_space);
+                if(strpos($zipcode_up,$newvalue) === 0)
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                $zipcode_space = str_replace(" ", "", $zipcode);
+                $zipcode_up = strtoupper($zipcode_space);
+                if ($zipcode_up == $value) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 
 }

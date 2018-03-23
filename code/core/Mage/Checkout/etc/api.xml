@@ -271,6 +271,11 @@
                         <method>getShippingMethodsList</method>
                         <acl>cart/shipping/list</acl>
                     </list>
+                    <checkzipcode translate="title" module="checkout">
+                        <title>checkout zipcode</title>
+                        <method>checkZipCode</method>
+                        <acl>cart/shipping/checkzipcode</acl>
+                    </checkzipcode>
                 </methods>
                 <faults module="checkout">
                     <store_not_exists>
@@ -483,6 +488,9 @@
                         <list translate="title" module="checkout">
                             <title>Get list of available shipping methods</title>
                         </list>
+                        <checkzipcode translate="title" module="checkout">
+                            <title>check zipcode</title>
+                        </checkzipcode>
                     </shipping>
                     <payment translate="title" module="checkout">
                         <title>Payment methods in shopping cart</title>
