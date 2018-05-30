@@ -74,6 +74,7 @@ class Mage_Checkout_Model_Cart_Product_Api extends Mage_Checkout_Model_Api_Resou
             }
 
             $productRequest = $this->_getProductRequest($productItem);
+
             try {
                 $result = $quote->addProduct($productByItem, $productRequest);
                 if (is_string($result)) {
@@ -90,11 +91,13 @@ class Mage_Checkout_Model_Cart_Product_Api extends Mage_Checkout_Model_Api_Resou
             // return 
         //}
 
-        try {
-            $quote->collectTotals()->save();
-        } catch (Exception $e) {
-            // $this->_fault("add_product_quote_save_fault", $e->getMessage());
-            $errors[] = $e->getMessage();
+        if (empty($errors)) {
+            try {
+                $quote->collectTotals()->save();
+            } catch (Exception $e) {
+                // $this->_fault("add_product_quote_save_fault", $e->getMessage());
+                $errors[] = $e->getMessage();
+            }
         }
 
         $success = true;
