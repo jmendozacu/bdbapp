@@ -77,24 +77,38 @@ class Mage_Checkout_Model_Cart_Product_Api extends Mage_Checkout_Model_Api_Resou
             try {
                 $result = $quote->addProduct($productByItem, $productRequest);
                 if (is_string($result)) {
-                    Mage::throwException($result);
+                    $errors[] = $result;
+                    #Mage::throwException($result);
                 }
             } catch (Mage_Core_Exception $e) {
                 $errors[] = $e->getMessage();
             }
         }
-
-        if (!empty($errors)) {
-            $this->_fault("add_product_fault", implode(PHP_EOL, $errors));
-        }
+        
+        //if (!empty($errors)) {
+            // $this->_fault("add_product_fault", implode(PHP_EOL, $errors));
+            // return 
+        //}
 
         try {
             $quote->collectTotals()->save();
         } catch (Exception $e) {
-            $this->_fault("add_product_quote_save_fault", $e->getMessage());
+            // $this->_fault("add_product_quote_save_fault", $e->getMessage());
+            $errors[] = $e->getMessage();
         }
 
-        return true;
+        $success = true;
+        if (!empty($errors)) {
+            $success = false;
+        }
+
+        $addResult[] = array( // Basic product data
+                'result'   => $success,
+                'errors'   => $errors
+                
+        );
+
+        return $addResult;
     }
 
     /**
