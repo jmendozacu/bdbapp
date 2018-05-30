@@ -60,6 +60,7 @@ class Mage_Catalog_Model_Product_Api extends Mage_Catalog_Model_Api_Resource
         'special_to_date',
         'tax_class_id',
         'tier_price',
+        'group_price',
         'meta_title',
         'meta_keyword',
         'meta_description',
@@ -88,14 +89,20 @@ class Mage_Catalog_Model_Product_Api extends Mage_Catalog_Model_Api_Resource
      * @return array
      */
     public function items($filters = null, $store = null)
-    {
+    { 
         $collection = Mage::getModel('catalog/product')->getCollection();
-	$collection->addAttributeToSelect('name')
-            ->addAttributeToSelect('image')
-            ->addAttributeToSelect('short_description')
-            ->addAttributeToSelect('price')
-            ->addAttributeToSelect('tier_price')
-            ->addAttributeToSelect('special_price')
+	    // $collection->addAttributeToSelect('name')
+        //     ->addAttributeToSelect('image')
+        //     ->addAttributeToSelect('short_description')
+        //     ->addAttributeToSelect('price')
+        //     ->addAttributeToSelect('tier_price')
+        //     ->addAttributeToSelect('group_price')
+        //     ->addAttributeToSelect('website_price')
+        //     ->addAttributeToSelect('special_price')
+        // ->setStore($store);
+
+
+         $collection->addAttributeToSelect('name')
 	    ->setStore($store);
 
         /** @var $apiHelper Mage_Api_Helper_Data */
@@ -110,20 +117,46 @@ class Mage_Catalog_Model_Product_Api extends Mage_Catalog_Model_Api_Resource
         }
         $result = array();
         foreach ($collection as $product) {
+            
+
+            // $result[] = array(
+            //     'product_id' => $product->getId(),
+            //     'sku'        => $product->getSku(),
+            //     'name'       => $product->getName(),
+            //     'set'        => $product->getAttributeSetId(),
+            //     'type'       => $product->getTypeId(),
+            //     'price'       => $product->getPrice(),
+            //     'short_description' => $product->getShortDescription(),
+            //     'image'        => $product->getImage(),
+            //     'category_ids' => $product->getCategoryIds(),
+            //     'website_ids'  => $product->getWebsiteIds(),
+            //     'tier_price'  => $product->getTierPrice(),
+            //     'group_price'  => $product->getGroupPrice(),
+            //     'special_price' => $product->getSpecialPrice(),
+            // );
+
+            $p = Mage::getModel('catalog/product')->load($product->getId());
+            // $result[] = $p->toArray();
+
             $result[] = array(
-                'product_id' => $product->getId(),
-                'sku'        => $product->getSku(),
+                'product_id' => $p->getId(),
+                'sku'        => $p->getSku(),
                 'name'       => $product->getName(),
-                'set'        => $product->getAttributeSetId(),
-                'type'       => $product->getTypeId(),
-                'price'       => $product->getPrice(),
-                'short_description' => $product->getShortDescription(),
-                'image'        => $product->getImage(),
-                'category_ids' => $product->getCategoryIds(),
-                'website_ids'  => $product->getWebsiteIds(),
-                'tier_price'  => $product->getTierPrice(),
-                'special_price' => $product->getSpecialPrice()
+                'set'        => $p->getAttributeSetId(),
+                'type'       => $p->getTypeId(),
+                'price'       => $p->getPrice(),
+                'short_description' => $p->getShortDescription(),
+                'image'        => $p->getImage(),
+                'category_ids' => $p->getCategoryIds(),
+                'website_ids'  => $p->getWebsiteIds(),
+                'tier_price'  => $p->getTierPrice(),
+                'group_price'  => $p['group_price'],
+                'special_price' => $p->getSpecialPrice(),
             );
+
+
+            // $result[] = $product->toArray();
+
         }
         return $result;
     }
@@ -154,13 +187,13 @@ class Mage_Catalog_Model_Product_Api extends Mage_Catalog_Model_Api_Resource
             'categories' => $product->getCategoryIds(),
             'websites'   => $product->getWebsiteIds(),
             'image'        => $product->getImage(),
-            'tier_price'  => $product->getTierPrice()
+            'tier_price'  => $product->getTierPrice(),
+            'group_price'  => $product->getGroupPrice()
         );
 
         foreach ($product->getTypeInstance(true)->getEditableAttributes($product) as $attribute) {
             if ($this->_isAllowedAttribute($attribute, $attributes)) {
-                $result[$attribute->getAttributeCode()] = $product->getData(
-                                                                $attribute->getAttributeCode());
+                $result[$attribute->getAttributeCode()] = $product->getData($attribute->getAttributeCode());
             }
         }
 
@@ -338,6 +371,12 @@ class Mage_Catalog_Model_Product_Api extends Mage_Catalog_Model_Api_Resource
              $tierPrices = Mage::getModel('catalog/product_attribute_tierprice_api')
                  ->prepareTierPrices($product, $productData['tier_price']);
              $product->setData(Mage_Catalog_Model_Product_Attribute_Tierprice_Api::ATTRIBUTE_CODE, $tierPrices);
+        }
+
+        if (isset($productData['group_price']) && is_array($productData['group_price'])) {
+             $groupPrices = Mage::getModel('catalog/product_attribute_groupprice_api')
+                 ->prepareGroupPrices($product, $productData['group_price']);
+             $product->setData(Mage_Catalog_Model_Product_Attribute_Groupprice_Api::ATTRIBUTE_CODE, $groupPrices);
         }
     }
 

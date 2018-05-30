@@ -166,6 +166,12 @@ class Mage_Customer_Model_Customer_Api extends Mage_Customer_Model_Api_Resource
             }
         }
 
+        // 许雷 增加修改密码支持 start
+        if(isset($customerData['password'])){  
+            $customer->setPassword($customerData['password']);  
+        } 
+         // 许雷 增加修改密码支持 end
+
         $customer->save();
         return true;
     }
