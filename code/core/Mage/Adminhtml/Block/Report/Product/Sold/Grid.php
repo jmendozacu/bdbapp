@@ -75,6 +75,10 @@ class Mage_Adminhtml_Block_Report_Product_Sold_Grid extends Mage_Adminhtml_Block
             'header'    =>Mage::helper('reports')->__('Product Name'),
             'index'     =>'order_items_name'
         ));
+        $this->addColumn('short_description', array(
+            'header'    =>Mage::helper('reports')->__('Description'),
+            'index'     =>'short_description'
+        ));
         $this->addColumn('sku', array(
             'header'    =>Mage::helper('reports')->__('Product SKU'),
             'sortable'  =>false,
